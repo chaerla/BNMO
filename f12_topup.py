@@ -18,9 +18,16 @@ import os
 def topup(user):
     username = input("Masukkan username: ")
     saldo = int(input("Masukkan saldo: "))
+    flag = False
     for data in user: # loop ini untuk mengiterasi semua baris dalam array user, artinya data = user[1], user[2], dst...
         if (data[1]==username): # data[1] maksudnya kolom ke 1 (kolom username), artinya disini kita ngecek apakah username pada baris tersebut sama dengan username input user
-            data[5]+=saldo 
+            if (saldo - data[5]<0):
+                print("Masukan tidak valid.")
+            else:
+                data[5]+=saldo 
+            flag = True
+    if (not(flag)):
+        print("Username", username, "tidak ditemukan")
     return user
 
 # tes fungsi
