@@ -1,0 +1,29 @@
+import os
+
+# misalnya array user :
+
+#       c o l l u m n s
+# ro    0       1       2       3       4       5
+# 0 [["id","username",  "nama",     "password", "role",     "saldo"],
+# 1 [  1,     "admin",  "admin",    "admin"   , "admin",    999999  ]
+# 2 [  2,    "luffy"   ,  "Monkey D. Luffy" ,   "iamsungod"   ,  "user"  , 999999 ]]
+
+
+# maka, user[0] = ["id","username",  "nama",     "password", "role",     "saldo"] (baris ke-0)
+# user[1] = [  1,     "admin",  "admin",    "admin"   , "admin",    999999  ] (baris ke-1)
+# user[1][0] = 1 (baris ke-1, kolom ke-0)
+# user[1][1] = "admin"
+# user[2][1] = "luffy"
+
+def topup(user):
+    username = input("Masukkan username: ")
+    saldo = int(input("Masukkan saldo: "))
+    for data in user: # loop ini untuk mengiterasi semua baris dalam array user, artinya data = user[1], user[2], dst...
+        if (data[1]==username): # data[1] maksudnya kolom ke 1 (kolom username), artinya disini kita ngecek apakah username pada baris tersebut sama dengan username input user
+            data[5]+=saldo 
+    return user
+
+# tes fungsi
+# user = [["id","username","nama","password","role","saldo"],["a","b","c","d","e",3]]
+# user = topup(user)
+# print (user)
