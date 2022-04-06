@@ -29,6 +29,7 @@ if __name__ == "__main__":
         kepemilikan = ds[2]
         riwayat = ds[3]
         # login()
+        # username = 
         perintah = input("Masukkan perintah: ")
         print()
         print(user)
@@ -39,6 +40,8 @@ if __name__ == "__main__":
                # save(user, game, kepemilikan, riwayat)
             # if (perintah=="tictactoe"):
                # tictactoe()
+            # if (perintah=="lihat_game"):
+                # lihat_game(game, kepemilikan, username)
             # perintah = input("Masukkan perintah: ")
             # print()
 
