@@ -6,6 +6,7 @@ from util import loadingmsg
 from f12_topup import topup
 from f15_load import load
 from f16_save import save
+from b03_tictactoe import tictactoe
 from util import find_path
 
 if __name__ == "__main__":    
@@ -18,9 +19,9 @@ if __name__ == "__main__":
     else:
         loadingmsg("Loading")
         print()
-        print("*"*40)
-        print("Selamat datang di antarmuka “Binomo”")
-        print("*"*40)
+        print('{:^80s}'.format("*"*80))
+        print('{:^80s}'.format("Selamat Datang di BNMO!"))
+        print('{:^80s}'.format("*"*80))
         print()
         ds = load(nama_folder)
         user = ds[0]
@@ -28,11 +29,15 @@ if __name__ == "__main__":
         kepemilikan = ds[2]
         riwayat = ds[3]
         # login()
-        perintah =  ""
         perintah = input("Masukkan perintah: ")
-        # if (perintah == "topup" and role == "admin"):
+        print()
+        # while(perintah!="exit"):
+            # if (perintah == "topup" and role == "admin"):
             # user = topup (user)
-        # if (perintah == "save"):
-            # save(user, game, kepemilikan, riwayat)
-
+            # if (perintah == "save"):
+               # save(user, game, kepemilikan, riwayat)
+            # if (perintah=="tictactoe"):
+               # tictactoe()
+            # perintah = input("Masukkan perintah: ")
+            # print()
 

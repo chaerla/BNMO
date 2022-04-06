@@ -1,5 +1,3 @@
-import os
-
 # misalnya array user :
 
 #       c o l l u m n s
@@ -24,6 +22,7 @@ def topup(user):
             if (saldo - data[5]<0):
                 print("Masukan tidak valid.")
             else:
+                print("Saldo sebesar",saldo,"berhasil ditambahkan ke user",username,"!")
                 data[5]+=saldo 
             flag = True
     if (not(flag)):

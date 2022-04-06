@@ -44,7 +44,6 @@ def my_append(arr, kol, data_baru):
     arrtemp[n_eff-1] = data_baru
     return arrtemp
 
-
 # print message bergerak
 def loadingmsg(msg):
     msg = msg+'...'
