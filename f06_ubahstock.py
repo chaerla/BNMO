@@ -15,6 +15,6 @@ def stock(id):
     stok = int(input("Masukkan stok terbaru: "))
     for data in game: 
         if (data[0] == id): # data[0] menunjukkan kolom ke-0 yaitu kolom id game
-            data[5] += stok
+            data[5] == stok # stok akan berubah sesuai dengan angka yang diinputkan
     return user 
 
