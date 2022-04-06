@@ -1,4 +1,4 @@
-import os
+# ga perlu import os krn ga dipake 
 
 # 0 [["id",                 "nama",                "kategori",  "tahun_rilis", "harga",     "stok"],
 # 1 [  "GAME001", "BNMO - Play Along With Crypto",  "Adventure",  "2022"   ,      "100000",    "1"  ]
