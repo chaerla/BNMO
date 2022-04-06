@@ -31,6 +31,7 @@ if __name__ == "__main__":
         # login()
         perintah = input("Masukkan perintah: ")
         print()
+        print(user)
         # while(perintah!="exit"):
             # if (perintah == "topup" and role == "admin"):
             # user = topup (user)

@@ -118,4 +118,4 @@ def tictactoe():
                 game_end()
 
 # tes prosedur
-# tictactoe()
+tictactoe()
