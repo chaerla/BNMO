@@ -1,12 +1,6 @@
 import time
 
-def check_full():
-    for i in range (3):
-        for j in range (3):
-            if (papan[i][j]=='#'):
-                return False
-    return True
-
+# prosedur untuk mencetak board tictactoe
 def print_board():
     print('{:^40s}'.format("-"*40))
     print("Status papan saat ini:")
@@ -17,6 +11,9 @@ def print_board():
         print()
     print('{:^40s}'.format("-"*40))
 
+# Fungsi untuk mencari pemenang
+# fungsi mengecek setiap baris, setiap kolom, dan setiap diagonal, jika ditemukan karakter X atau O yang membentuk segaris, maka karakter tersebut dikembalikan sebagai pemenang
+# fungsi mengembalik # jika belum ada pemenang
 def find_winner():
     # cek baris
     for i in range (3):
@@ -37,6 +34,7 @@ def find_winner():
     
     return '#'
 
+# memvalidasi input baris dan kolom oleh user
 def cek_input():
     ro = int(input("Baris yang ingin diisi [1..3]: "))
     while(ro<1 or ro>3):
@@ -53,22 +51,27 @@ def input_player(c):
     pos = cek_input()
     ro = pos[0]
     col = pos[1]
+    # memvalidasi apakah kotak yang ingin diisi user sudah terisi atau belum
     while(papan[ro-1][col-1]=='X' or papan[ro-1][col-1]=='O'):
         print("Kotak sudah terisi. Silahkan pilih kotak lain.")
         pos = cek_input()
         ro = pos[0]
         col = pos[1]
+    # ubah array menjadi karakter user 
     papan[ro-1][col-1] = c
 
+# cetak pesan game berakhir
 def game_end():
     print('{:^40s}'.format("*"*40))
     print('{:^40s}'.format("Game berakhir"))
     print('{:^40s}'.format("*"*40))
 
-
+# prosedur tictactoe
 def tictactoe():   
     global papan, won, isFull, move_cnt
+    # sebuah variabel yang menyimpan jumlah gerakan yang telah terjadi
     move_cnt = 0
+    # inisialisasi papan kosong
     papan =[["#" for j in range (3)] for i in range (3)]
     won = '#'
     isFull = False
@@ -88,13 +91,13 @@ def tictactoe():
         print('.',end="")
         time.sleep(0.5)
     print()
+    # selama belum ada pemenang dan kotak belum penuh (ditandai dengan jumlah gerakan = 9)
     while(move_cnt!=9 and won =='#'):
         print("Giliran pemain X")
         input_player('X')
         move_cnt+=1
         print_board()
         won = find_winner()
-        isFull = check_full()
         if (won=='X'):
             print("Pemain X menang!")
             game_end()
@@ -107,10 +110,12 @@ def tictactoe():
             move_cnt+=1
             print_board()
             won = find_winner()
-            isFull = check_full()
             if (won=='O'):
                 print("Pemain O menang!")
                 game_end()
             elif (move_cnt==9 and won=='#'):
                 print("X dan O tie. Tidak ada pemenang.")
                 game_end()
+
+# tes prosedur
+# tictactoe()
