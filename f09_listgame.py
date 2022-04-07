@@ -34,7 +34,7 @@ def list_game (game, kepemilikan, username):
                     print('{:^10s}'.format(str(data[4]))+"|",end="")
             print()
     if (not(found)):
-        print("Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli.")
+        print("Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beliiii.")
         ###################################
 
 # testing
