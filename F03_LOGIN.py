@@ -35,18 +35,29 @@ def FormulirLogIn():
   passwordPengguna = input("Masukkan password : ")
 
 #PENCARI NOMOR ID PENGGUNA DENGAN USERNAME PENGGUNA dari FormulirLogIn()
-def PencariUser(usernamePengguna, data):
+def PencariUser(usernamePengguna, passwordPengguna, data):
   for i in range (my_len(data) + 1):
+    # + 1 ga perlu
     if usernamePengguna == data[i][username]:
-      global idPengguna
-      idPengguna = i
-    elif i == my_len(data)and usernamePengguna != data[i][username]:
-      #DIARAHKAN KE FormulirLogIn() atau FormulirRegistrasi()
-      return False
+      if(passwordPengguna== data[i][password]):
+          global idPengguna
+          idPengguna = i
+          return True
+      else:
+        print ("Password Anda salah.")
+        FormulirLogIn()
+  print("Username tidak ditemukan.")
+  return False
   
 #KONFIRMASI PEMILIK AKUN DENGAN PEMERIKSAAN PASSWORD DAN ID PENGGUNA dari PencariUser()
-def KonfirmasiUser(passwordPengguna, data)
-  if passwordPengguna == data[i][password]:
+def KonfirmasiUser(passwordPengguna, passwordUser):
+  # return passwordPengguna == passwordUser
+  if passwordPengguna == passwordUser:
     return True
   else :
     return False
+# data = array user
+def LogIn(data):
+  FormulirLogIn()
+  if(PencariUser(usernamePengguna,passwordPengguna)):
+    return (idPengguna, data[idPengguna][role])

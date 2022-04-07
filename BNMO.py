@@ -6,7 +6,7 @@ from util import loadingmsg
 from f12_topup import topup
 from f15_load import load
 from f16_save import save
-from b03_tictactoe import tictactoe
+# from b03_tictactoe import tictactoe
 from util import find_path
 
 if __name__ == "__main__":    
@@ -32,7 +32,7 @@ if __name__ == "__main__":
         # username = 
         perintah = input("Masukkan perintah: ")
         print()
-        print(user)
+        # print(user)
         # while(perintah!="exit"):
             # if (perintah == "topup" and role == "admin"):
             # user = topup (user)

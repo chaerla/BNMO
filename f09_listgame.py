@@ -38,7 +38,7 @@ def list_game (game, kepemilikan, username):
         ###################################
 
 # testing
-kepemilikan = [["game_id","user_id"], ["GAME001", "luffy"]]
-game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10]]
-username = input("Masukkan username: ")
-list_game (game, kepemilikan, username)
+# kepemilikan = [["game_id","user_id"], ["GAME001", "luffy"]]
+# game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10]]
+#username = input("Masukkan username: ")
+# list_game (game, kepemilikan, username)
