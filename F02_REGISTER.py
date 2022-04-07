@@ -114,3 +114,7 @@ def register (data):
   FormulirRegistrasi()
   PeriksaUsernameUnik()
   return data
+
+# testing
+# data = [["id","username","nama","password","role","saldo"],["a","b","c","d","e",3]]
+# print(register(data))
