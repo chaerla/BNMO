@@ -1,5 +1,10 @@
 #KAMUS
 #data = array of array untuk user.csv
+#       c o l l u m n s
+# ro    0       1       2       3       4       5
+# 0 [["id","username",  "nama",     "password", "role",     "saldo"],
+# 1 [  1,     "admin",  "admin",    "admin"   , "admin",    999999  ]
+# 2 [  2,    "luffy"   ,  "Monkey D. Luffy" ,   "iamsungod"   ,  "user"  , 999999 ]]
 id = 0
 username = 1
 nama = 2
@@ -46,14 +51,26 @@ def PeriksaUsernameUnik(usernamePendaftar, data):
       #return False
       break
     else :
-      periksaKetentuanUsername()
+      # if (periksaKetentuanUsername(usernamePendaftar)) :
+        # PemasukanDataUserBaru(data, usernamePendaftar, namaPendaftar, passwordPendaftar)
+      # else :
+        # print("Username tidak memenuhi ketentuan.")
+        # FormulirRegistrasi()
+      periksaKetentuanUsername(usernamePendaftar)
       #return True
 
 
 #PERIKSA APAKAH usernamePendaftar SUDAH SESUAI KETENTUAN
 def periksaKetentuanUsername(usernamePendaftar):
   KebenaranUsername = 0
+  # bool flag = True
+  # while (i < my_len(usernamePendaftar)) and flag:
+
   for i in range (my_len(usernamePendaftar)):
+    # if not ((65 <= ord(usernamePendaftar[i]) <= 91) or (97 <= ord(usernamePendaftar[i]) <= 123) or (48 <= ord(usernamePendaftar[i]) <= 58)):
+    # flag = False
+
+  # return flag
     for j in range (65, 91):
       if usernamePendaftar[i] == chr(j):
         KebenaranUsername = KebenaranUsername + 1
@@ -84,7 +101,7 @@ def periksaKetentuanUsername(usernamePendaftar):
 #PENAMBAHAN PENGGUNA BARU DI TABEL DATA
 def PemasukanDataUserBaru(data, usernamePendaftar, namaPendaftar, passwordPendaftar):
   data_baru = [my_len(data) + 1, usernamePendaftar, namaPendaftar, passwordPendaftar, "user", 0]
-  my_append(data, 6, data_baru)
+  data = my_append(data, 6, data_baru)
 
 
 #REALISASI DATA
@@ -92,3 +109,8 @@ def PemasukanDataUserBaru(data, usernamePendaftar, namaPendaftar, passwordPendaf
 #PeriksaUsernameUnik(parameter)
 #if periksaKetentuanUsername(parameter):
 #  PemasukanDataUserBaru(parameter)
+
+def register (data):
+  FormulirRegistrasi()
+  PeriksaUsernameUnik()
+  return data
