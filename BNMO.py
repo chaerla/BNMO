@@ -28,12 +28,15 @@ if __name__ == "__main__":
         game = ds[1]
         kepemilikan = ds[2]
         riwayat = ds[3]
-        # login()
-        # username = 
+        # arrtemp = login()
+        # user_id = arrtemp[0]
+        # role = arrtemp[1]
         perintah = input("Masukkan perintah: ")
         print()
         # print(user)
         # while(perintah!="exit"):
+            # if (perintah=="register"):
+                # register(user)
             # if (perintah == "topup" and role == "admin"):
             # user = topup (user)
             # if (perintah == "save"):
