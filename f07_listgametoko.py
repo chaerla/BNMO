@@ -7,18 +7,13 @@ from util import my_len
 #  1 [GAME001,BNMO - Play Along With Crypto,Adventure,2022,100000,1].
 #  2 [GAME002;Dasar Pemrograman;Coding;2022;0;10]]
 def my_sort (arr, tanda, kol):
-    n = my_len(arr)
-    for i in range (0, n):
-        for j in range (0, n-i-1):
-            if(j!=0):
-                if (arr[j+1][kol]<arr[j][kol]):
-                    temp = arr[j]
-                    arr[j] = arr[j+1]
-                    arr[j+1] = temp
-    
+    # coba buat skema sorting pakai bubble sort
+    # hint : bandinginnya pake if arr[j][kol] >arr[j+1][kol]
+    # kalau udah disort, print array game
     print_game(arr, tanda)
 
 def print_game(arr, tanda):
+    # ini udah ada code buat print game dari kent jadi aku copas aja supaya sergama
     if (tanda == "" or tanda == "+"):
         for i in range (1, my_len(arr)):
             print('{:^3s}'.format(str(i)+"."), end="")
@@ -41,20 +36,16 @@ def print_game(arr, tanda):
             j+=1
 
 def list_game_toko(game):
-    skema = input("Skema sorting: ")
-    if (skema==""):
-        print_game(game)
-    else:
-        temp = ""
-        for i in range (my_len(skema)-1):
-            temp+=skema[i]
-        tanda = skema[my_len(skema)-1]
-        if(temp=="harga" and (tanda=="+" or tanda =="-")):
-            my_sort(game, tanda, 4)
-        elif (temp=="tahun" and (tanda=="+" or tanda =="-")):
-            my_sort(game, tanda, 3)
-        else:
-            print ("Tidak valid")
+    # minta input skema sorting dari user
+    
 
+    # jika skema kosong (skema==""), jalankan print_game(game)
+    # else: 
+    # slice skema dari chr ke 0 sampai char kedua dari belakang, tapi ga boleh pake slice python jadi coba implementasikan sendiri
+    # char paling belakang dimasukin ke variabel tanda
+    # jika skema valid, lakukan my_sort(game, tanda, indeks kolom harga/tahun)
+    # jika tidak, print tidak valid. 
+    
+# buat ngetes
 game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10], ["GAME003","DOTA2","Moba",2003,50000,10]]
 list_game_toko(game)

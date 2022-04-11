@@ -47,4 +47,5 @@ if __name__ == "__main__":
                 # lihat_game(game, kepemilikan, username)
             # perintah = input("Masukkan perintah: ")
             # print()
+        
 
