@@ -15,7 +15,7 @@ def tambahgame(game):
         # disini code buat input Masukkan nama game, masukkan kategori, etc.
         nama_game = input("Masukkan nama game: ")
         # dst ...
-    # cari id_game, ini agak ribet mikir logikanya jadi aku langsung code ajar tar aku jelasin kalau meet
+    # cari id_game, ini agak ribet mikir logikanya jadi aku langsung code aja tar aku jelasin kalau meet
     temp = str(my_len(game))
     for _ in range (3 - my_len(temp)):
         temp = "0" + str(temp)
