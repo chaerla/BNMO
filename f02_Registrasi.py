@@ -25,13 +25,12 @@ def my_len(arr):
         len+=1
     return len 
 
-
-
 #REGISTRASI
 def FormulirRegistrasi(data):
   global namaPendaftar
   global usernamePendaftar
   global passwordPendaftar
+  print('{:^80s}'.format("*"*80))
   namaPendaftar = input("Masukkan nama : ")
   usernamePendaftar = input("Masukkan username : ")
   passwordPendaftar = input("Masuukan password : ")
@@ -41,7 +40,7 @@ def FormulirRegistrasi(data):
 def PeriksaUsernameUnik(data, usernamePendaftar):
   for i in range (1, my_len(data)):
     if usernamePendaftar == data[i][1]: #2 untuk kolom username
-      print("Username sudah digunakan. Ulangi", namaPendaftar, "!")
+      print("Username",usernamePendaftar, "sudah terpakai! Silahkan isi ulang form dengan username lain.")
       FormulirRegistrasi(data)
       break
     elif i == my_len(data) - 1 :
@@ -54,12 +53,11 @@ def PemasukanDataPengggunaBaru(data, usernamePendaftar, namaPendaftar, passwordP
   data_baru = [idPengguna, usernamePendaftar, namaPendaftar, passwordPendaftar, "user", 0]
   global dataBaru
   dataBaru = my_append(data, 6, data_baru)
-  data = my_append(data, 6, data_baru)
   #print(data)
   #user_id = data[idPengguna][0] #0 unutk kolom id 
   #rolePengguna = data[idPengguna][4] #4 untuk kolom role
   #print(user_id, rolePengguna)
-  return data
+  
 
 #PERIKSA APAKAH usernamePendaftar SUDAH SESUAI KETENTUAN
 def PeriksaKetentuanUsername(usernamePendaftar):
@@ -67,7 +65,8 @@ def PeriksaKetentuanUsername(usernamePendaftar):
   i = 0
   while (i < my_len(usernamePendaftar)) and usernameBenar:
     if not((65 <= ord(usernamePendaftar[i]) <= 90) or (97 <= ord(usernamePendaftar[i]) <= 122) or (48 <= ord(usernamePendaftar[i]) <= 57) or (ord(usernamePendaftar[i])== 45) or (ord(usernamePendaftar[i]) == 95)):
-      print("Username tidak sesuai dengan ketentuan.")
+      print("""Username tidak sesuai dengan ketentuan. Username hanya dapat mengandung alfabet A-Z, 
+      a-z, underscore “_”, strip “-”, dan angka 0-9.""")
       usenameBenar = False
       FormulirRegistrasi(data)
       break
@@ -77,13 +76,16 @@ def PeriksaKetentuanUsername(usernamePendaftar):
     i = i + 1
 
 #RANGKUMAN PROSEDUR & FUNGSI
-def Registrasi(data):
+def Registrasi(user):
+  global data
+  data = user
+  print('{:^80s}'.format("*"*80))
+  print('{:^80s}'.format("Registrasi"))
   FormulirRegistrasi(data)
-  #print(data)
-  data = dataBaru
-  #print(data)
+  #print(dataBaru)
 
-
-Registrasi(data)
+user = [["id","username","nama","password","role","saldo"],[1,"luffy","luffy","abc","user",3]]
+Registrasi(user)
+print(dataBaru)
 #print(PemasukanDataPengggunaBaru(data, usernamePendaftar, namaPendaftar, passwordPendaftar))
 #print(data) masalah karena di global data kembali ke kondisi awal data (tanpa penambahan data dari registrasi)
