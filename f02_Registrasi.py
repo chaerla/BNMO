@@ -65,8 +65,8 @@ def PeriksaKetentuanUsername(usernamePendaftar):
   i = 0
   while (i < my_len(usernamePendaftar)) and usernameBenar:
     if not((65 <= ord(usernamePendaftar[i]) <= 90) or (97 <= ord(usernamePendaftar[i]) <= 122) or (48 <= ord(usernamePendaftar[i]) <= 57) or (ord(usernamePendaftar[i])== 45) or (ord(usernamePendaftar[i]) == 95)):
-      print("""Username tidak sesuai dengan ketentuan. Username hanya dapat mengandung alfabet A-Z, 
-      a-z, underscore “_”, strip “-”, dan angka 0-9.""")
+      print("Username tidak sesuai dengan ketentuan.") 
+      print("Username hanya dapat mengandung alfabet A-Z, a-z, underscore “_”, strip “-”, dan angka 0-9.")
       usenameBenar = False
       FormulirRegistrasi(data)
       break
@@ -84,8 +84,9 @@ def Registrasi(user):
   FormulirRegistrasi(data)
   #print(dataBaru)
 
-user = [["id","username","nama","password","role","saldo"],[1,"luffy","luffy","abc","user",3]]
-Registrasi(user)
-print(dataBaru)
+# testing fungsi
+# user = user = [["id","username","nama","password","role","saldo"],[1, "admin", "admin", "admin", "admin", 999999], [2, "luffy", "Monkey D. Luffy", "iamsungod", "user", 999999]]
+# Registrasi(user)
+# print(dataBaru)
 #print(PemasukanDataPengggunaBaru(data, usernamePendaftar, namaPendaftar, passwordPendaftar))
 #print(data) masalah karena di global data kembali ke kondisi awal data (tanpa penambahan data dari registrasi)

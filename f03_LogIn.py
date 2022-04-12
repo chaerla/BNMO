@@ -31,7 +31,7 @@ def my_len(arr):
 def FormulirLogIn(data):
   global usernamePengguna
   global passwordPengguna
-  print('{:^80s}'.format("*"*80))
+  print('{:^120s}'.format("*"*120))
   usernamePengguna = input("Masukkan username : ")
   passwordPengguna = input("Masukkan password : ")
   PencariUser(data, usernamePengguna)
@@ -42,7 +42,10 @@ def PencariUser(data, usernamePengguna):
     if usernamePengguna == data[i][1]: #1 untuk username
       # i sebagai id pengguna
       if passwordPengguna == data[i][3]: #3 unutk password
-        print("Log in berhasil.")
+        os.system('cls' if os.name=='nt' else 'clear')
+        print('{:^120s}'.format("*"*120))
+        print('{:^120s}'.format("Selamat datang " + data[i][2]+"! Selamat menggunakan BNMO!"))
+        print('{:^120s}'.format("*"*120))
         global ret
     #print(data[i][id], data[i][role])
         ret = (data[i][0], data[i][4]) #0 unutk id dan 4 untuk role 
@@ -59,8 +62,7 @@ def PencariUser(data, usernamePengguna):
 
 #RANGKUMAN PEOSEDUR DAN FUNGSI
 def LogIn(data):
-  print('{:^80s}'.format("*"*80))
-  print('{:^80s}'.format("Login"))
+  print('{:^120s}'.format("Lakukan LogIn untuk menggunakan BNMO"))
   FormulirLogIn(data)
   return ret
 

@@ -19,8 +19,11 @@ def topup(user):
     flag = False
     for data in user: # loop ini untuk mengiterasi semua baris dalam array user, artinya data = user[1], user[2], dst...
         if (data[1]==username): # data[1] maksudnya kolom ke 1 (kolom username), artinya disini kita ngecek apakah username pada baris tersebut sama dengan username input user
-            if (saldo - data[5]<0):
+            if (data[5] - saldo<0):
+                print(saldo-data[5])
                 print("Masukan tidak valid.")
+            elif (data[5] < 0):
+                print("Saldo", username, "berhasil dikurangi sebanyak",-saldo)
             else:
                 print("Saldo sebesar",saldo,"berhasil ditambahkan ke user",username,"!")
                 data[5]+=saldo 
@@ -30,6 +33,6 @@ def topup(user):
     return user
 
 # tes fungsi
-# user = [["id","username","nama","password","role","saldo"],["a","b","c","d","e",3]]
+# user = [["id","username","nama","password","role","saldo"],[1, "admin", "admin", "admin", "admin", 999999], [2, "luffy", "Monkey D. Luffy", "iamsungod", "user", 999999]]
 # user = topup(user)
 # print (user)
