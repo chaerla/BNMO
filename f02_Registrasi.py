@@ -30,7 +30,7 @@ def FormulirRegistrasi(data):
   global namaPendaftar
   global usernamePendaftar
   global passwordPendaftar
-  print('{:^80s}'.format("*"*80))
+  print('{:^120s}'.format("*"*120))
   namaPendaftar = input("Masukkan nama : ")
   usernamePendaftar = input("Masukkan username : ")
   passwordPendaftar = input("Masuukan password : ")

@@ -22,7 +22,6 @@ def tambahgame(game):
     id_game = "GAME" + str(temp)
     # masukkan semua elemen ke sebuah array
     data_baru = [id_game, nama_game, kategori, tahun_rilis, harga, stok_awal]
-    game.my_append(data_baru)
     # append array ke array game
     # append itu butuh 3 parameter, array game, jumlah kolom array, sama data baru yang ingin dimasukkan
     # array awal kita itu array game, terus jumlah kolom game itu ada 6, teruss data_baru itu yang mau ditambahin
@@ -31,7 +30,6 @@ def tambahgame(game):
 
 # test
 
-# game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10]]
-# test = tambahgame(game)
-# print (test)
-tambahgame("game")
+game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10]]
+test = tambahgame(game)
+print(test)
