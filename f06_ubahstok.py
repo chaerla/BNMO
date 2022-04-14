@@ -17,20 +17,24 @@ def ubah_stok(game):
     for data in game: 
         if (data[0] == id): # data[0] menunjukkan kolom ke-0 yaitu kolom id game
             found = True 
+            print()
             if stok < 0 and (-(stok)<data[5]):
                 data[5] += stok
-                print("Stok game",data[1], "berhasil dikurangi. Stok sekarang: ", data[5] )
+                print("Stok game",data[1], "berhasil dikurangi. Stok sekarang:", data[5] )
             elif stok > 0 :
                 data[5] += stok
-                print("Stok game",data[1], "berhasil ditambahkan. Stok sekarang: ", data[5] )
+                print("Stok game",data[1], "berhasil ditambahkan. Stok sekarang:", data[5] )
             elif stok < 0 and (-(stok)) > data[5]:
-                print("Stok game", id, " gagal dikurangi karena stok kurang. Stok sekarang: ", data[5], "( <",-stok,")")
+                print("Stok game", id, " gagal dikurangi karena stok kurang. Stok sekarang:", data[5], "( <",-stok,")")
+            print()
             # disini codenya kurang, coba baca ulang spesifikasi. Ada beberapa kasus. :
             # if stok kurang dari stok game(data[5]), output pesan error (coba buat codenya)
             # elif stok < 0, dan > data[5], data[5]+=stok print stok dikurangi (baca di spek) (coba buat codenya)
             # elif stok > 0, data[5]+=stok, print stok ditambah (coba buat codenya)
     if (not(found)):
+        print()
         print("Tidak ada game dengan ID tersebut!")
+        print()
         # coba code disini buat tanganin kasus kalau game ga ada ditemukan di array game (baca spek)
     return game
 

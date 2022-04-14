@@ -4,7 +4,7 @@
 
 #UNTUK MEMEPERMUDAH AKSES
 # 0 = id
-# 1 = usernmae
+# 1 = username
 # 2 = nama
 # 3 = password
 # 4 = role
@@ -53,6 +53,10 @@ def PemasukanDataPengggunaBaru(data, usernamePendaftar, namaPendaftar, passwordP
   data_baru = [idPengguna, usernamePendaftar, namaPendaftar, passwordPendaftar, "user", 0]
   global dataBaru
   dataBaru = my_append(data, 6, data_baru)
+  print()
+  print('{:^120s}'.format("Registrasi akun",usernamePendaftar,"berhasil!"))
+  print()
+  print('{:^120s}'.format("*"*120))
   #print(data)
   #user_id = data[idPengguna][0] #0 unutk kolom id 
   #rolePengguna = data[idPengguna][4] #4 untuk kolom role
@@ -79,9 +83,10 @@ def PeriksaKetentuanUsername(usernamePendaftar):
 def Registrasi(user):
   global data
   data = user
-  print('{:^80s}'.format("*"*80))
-  print('{:^80s}'.format("Registrasi"))
+  print('{:^120s}'.format("*"*120))
+  print('{:^120s}'.format("Registrasi"))
   FormulirRegistrasi(data)
+  return dataBaru
   #print(dataBaru)
 
 # testing fungsi

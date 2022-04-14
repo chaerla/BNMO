@@ -69,3 +69,7 @@ def Deskripsi(kata):
       katabaru = katabaru + kata[i]
   
   return katabaru
+
+x = input()
+print(Enskripsi(x))
+print(Deskripsi(Enskripsi(x)))
