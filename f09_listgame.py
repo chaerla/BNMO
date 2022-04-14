@@ -12,7 +12,7 @@
 #  0 [[id,   nama,  kategori,    tahun_rilis    ,harga      ,stok],
 #  1 [GAME001,BNMO - Play Along With Crypto,Adventure,2022,100000,1].
 #  2 [GAME002;Dasar Pemrograman;Coding;2022;0;10]]
-def list_game (game, kepemilikan, username):
+def list_game (game, kepemilikan, user_id):
     # for i in range len(kepemilikan):
         # if (kepemilikan[i][1] == username):
             # game_id = kepemilikan[i][0]
@@ -20,7 +20,7 @@ def list_game (game, kepemilikan, username):
     print("Daftar game: ")
     game_cnt = 0 # Variabel untuk menyimpan jumlah game
     for data in kepemilikan:
-        if (username == data[1]):
+        if (user_id == data[1]):
             found = True
             game_cnt+=1 # increment jumlah game yang ditemukan
             game_id = data[0]
@@ -38,7 +38,7 @@ def list_game (game, kepemilikan, username):
         ###################################
 
 # testing
-# kepemilikan = [["game_id","user_id"], ["GAME001", "luffy"]]
+# kepemilikan = [["game_id","user_id"], ["GAME001", "2"]]
 # game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10]]
 #username = input("Masukkan username: ")
 # list_game (game, kepemilikan, username)

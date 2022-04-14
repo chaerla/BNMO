@@ -22,7 +22,9 @@ def tambahgame(game):
     id_game = "GAME" + str(temp)
     # masukkan semua elemen ke sebuah array
     data_baru = [id_game, nama_game, kategori, tahun_rilis, harga, stok_awal]
+    print()
     print('{:^120s}'.format("Game "+nama_game+" berhasil ditambahkan!"))
+    print()
     # append array ke array game
     # append itu butuh 3 parameter, array game, jumlah kolom array, sama data baru yang ingin dimasukkan
     # array awal kita itu array game, terus jumlah kolom game itu ada 6, teruss data_baru itu yang mau ditambahin
