@@ -12,6 +12,15 @@
 #  0 [[id,   nama,  kategori,    tahun_rilis    ,harga      ,stok],
 #  1 [GAME001,BNMO - Play Along With Crypto,Adventure,2022,100000,1].
 #  2 [GAME002;Dasar Pemrograman;Coding;2022;0;10]]
+
+def print_game(data, game_cnt):
+    print('{:^3s}'.format(str(game_cnt)+"."), end="")
+    print('{:^12s}'.format(data[0])+"|",end="")
+    print('{:^40s}'.format(data[1])+"|",end="")
+    print('{:^15s}'.format(data[2])+"|",end="")
+    print('{:^6s}'.format(str(data[3]))+"|",end="")
+    print('{:^10s}'.format(str(data[4]))+"|")
+
 def search_game_id (game, kepemilikan, username):
     # for i in range len(kepemilikan):
         # if (kepemilikan[i][1] == username):
@@ -19,47 +28,50 @@ def search_game_id (game, kepemilikan, username):
     found = False
     print("search my_game")
     id_game = input("Masukkan ID Game: ")
-    tahun_rilis = int(input("Masukkan Tahun Rilis Game: "))
+    tahun_rilis = input("Masukkan Tahun Rilis Game: ")
     game_cnt = 0 # Variabel untuk menyimpan jumlah game
+    found = False
+    punya_game = False
     for data in kepemilikan:
         if (username == data[1]):
-            found = True
-            game_cnt+=1 # increment jumlah game yang ditemukan
-            if (tahun_rilis == ""):
-                for data in game:
-                    if (id_game==data[0]):
-                        print('{:^3s}'.format(str(game_cnt)+"."), end="")
-                        print('{:^12s}'.format(data[0])+"|",end="")
-                        print('{:^40s}'.format(data[1])+"|",end="")
-                        print('{:^15s}'.format(data[2])+"|",end="")
-                        print('{:^6s}'.format(str(data[3]))+"|",end="")
-                        print('{:^10s}'.format(str(data[4]))+"|",end="\n")
+            punya_game = True
+            if (tahun_rilis == "" and id_game !=""):
+                for data_game in game:
+                    if (id_game==data_game[0] and id_game == data[0]):
+                        found = True
+                        game_cnt+=1
+                        print_game(data_game, game_cnt)
                 print()
-            elif (id_game == ""):
-                for data in game:
-                    if (tahun_rilis==data[3]):
-                        print('{:^3s}'.format(str(game_cnt)+"."), end="")
-                        print('{:^12s}'.format(data[0])+"|",end="")
-                        print('{:^40s}'.format(data[1])+"|",end="")
-                        print('{:^15s}'.format(data[2])+"|",end="")
-                        print('{:^6s}'.format(str(data[3]))+"|",end="") #masalah lainnya dia gamau ngeread integer
-                        print('{:^10s}'.format(str(data[4]))+"|",end="\n") #mau masukin else tapi malah ngeprint elsenya 3 kali
+            elif (id_game == "" and tahun_rilis !=""):
+                for data_game in game:
+                    if (int(tahun_rilis)==data_game[3] and data[0] == data_game[0]):
+                        found = True
+                        game_cnt+=1
+                        print_game(data_game, game_cnt)
                 print()
-            elif (id_game == "" and tahun_rilis == ""):
-                print("Tidak ada game pada inventory-mu yang memenuhi kriteria")#error
-            else: #(tahun_rilis != "" and id_game != ""):
-                for data in game:
-                    if (id_game==data[0] and tahun_rilis==data[3]):
-                        print('{:^3s}'.format(str(game_cnt)+"."), end="")
-                        print('{:^12s}'.format(data[0])+"|",end="")
-                        print('{:^40s}'.format(data[1])+"|",end="")
-                        print('{:^15s}'.format(data[2])+"|",end="")
-                        print('{:^6s}'.format(str(data[3]))+"|",end="")
-                        print('{:^10s}'.format(str(data[4]))+"|",end="\n")
+            elif (tahun_rilis!="" and id_game!=""): #(tahun_rilis != "" and id_game != ""):
+                for data_game in game:
+                    if (id_game==data_game[0] and data[0] == data_game[0] and int(tahun_rilis)==data_game[3]):
+                        found = True
+                        game_cnt+=1
+                        print_game(data_game, game_cnt)
                 print()
+            else:
+                for data_game in game:
+                    if (data[0] == data_game[0]):
+                        print(data[0])
+                        found = True
+                        game_cnt+=1
+                        print_game(data_game, game_cnt)
+                print()
+    
+    if (not(found) and punya_game):
+        print("Maaf. Tidak ada game pada inventory yang memenuhi kriteria.")
+    if (not(punya_game)):
+        print("Maaf. Inventory Anda kosong.")
 
 # testing
-kepemilikan = [["game_id","user_id"], ["GAME001", "luffy"]]
-game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10]]
-username = input("Masukkan username: ")
-search_game_id (game, kepemilikan, username)
+# kepemilikan = [["game_id","user_id"], ["GAME001", "luffy"]]
+# game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10]]
+# username = input("Masukkan username: ")
+# search_game_id (game, kepemilikan, username)

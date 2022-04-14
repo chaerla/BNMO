@@ -63,14 +63,10 @@ def Deskripsi(kata):
   for i in range ( my_len(kata)):
     if 65 <= ord(kata[i]) <= 90:
       katabaru = katabaru + chr(((invers_a * ((ord(kata[i]) + 65 - b)) % 26)) + 65)
-    if 97 <= ord(kata[i]) <= 122:
+    elif 97 <= ord(kata[i]) <= 122:
       x = ord(kata[i]) - 32
       katabaru = katabaru + chr(((invers_a * ((x + 65 - b)) % 26)) + 97)
     else:
       katabaru = katabaru + kata[i]
   
   return katabaru
-
-x = input()
-print(Enskripsi(x))
-print(Deskripsi(Enskripsi(x)))
