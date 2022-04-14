@@ -74,16 +74,26 @@ if __name__ == "__main__":
             
             # PEMANGGILAN F09 - LIST GAME USER
             if (perintah == "list_game"):
-                if (role=="admin"): list_game (game, kepemilikan, user_id)
+                if (role=="user"): list_game (game, kepemilikan, user_id)
                 else: print("Maaf, Anda tidak dapat mengakses perintah tersebut. Perintah tersebut hanya dapat diakses oleh user.")
-
+            
+            # PEMANGGILAN F12 - TOP UP
             if (perintah == "topup"):
                 if (role=="admin"): user = topup (user)
                 else: print("Maaf, Anda tidak memiliki izin untuk mengakses perintah tersebut. Perintah tersebut hanya dapat diakses oleh administrator.")
-            # if (perintah == "save"):
-               # save(user, game, kepemilikan, riwayat)
-            # if (perintah=="tictactoe"):
-               # tictactoe()
+
+            # PEMANGGILAN F13 - LIST RIWAYAT
+            if (perintah == "riwayat"):
+                if (role=="user"): list_riwayat (riwayat, user_id)
+                else: print("Maaf, Anda tidak dapat mengakses perintah tersebut. Perintah tersebut hanya dapat diakses oleh user.")
+
+            # PEMANGGILAN F16 - SAVE
+            if (perintah == "save"):
+               save(user, game, kepemilikan, riwayat)
+
+            # PEMANGGILAN B03 - TICTACTOE
+            if (perintah=="tictactoe"):
+               tictactoe()
             # if (perintah=="lihat_game"):
                 # lihat_game(game, kepemilikan, username)
             perintah = input("Masukkan perintah: ")
