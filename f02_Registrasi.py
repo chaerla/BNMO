@@ -9,6 +9,7 @@
 # 3 = password
 # 4 = role
 # 5 = saldo
+from b01_Cipher import Enkripsi
 
 def my_append(arr, kol, data_baru):
     n_eff = my_len(arr) + 1
@@ -38,7 +39,7 @@ def FormulirRegistrasi(data):
 
 #PERIKSA usernamePendaftar ADAKAH YANG SAMA DENGAN yang di data
 def PeriksaUsernameUnik(data, usernamePendaftar):
-  for i in range (1, my_len(data)):
+  for i in range (0, my_len(data)):
     if usernamePendaftar == data[i][1]: #2 untuk kolom username
       print("Username",usernamePendaftar, "sudah terpakai! Silahkan isi ulang form dengan username lain.")
       FormulirRegistrasi(data)
@@ -50,11 +51,11 @@ def PeriksaUsernameUnik(data, usernamePendaftar):
 #PENAMBAHAN PENGGUNA BARU DI TABEL DATA
 def PemasukanDataPengggunaBaru(data, usernamePendaftar, namaPendaftar, passwordPendaftar):
   idPengguna = my_len(data)
-  data_baru = [idPengguna, usernamePendaftar, namaPendaftar, passwordPendaftar, "user", 0]
+  data_baru = [idPengguna, usernamePendaftar, namaPendaftar, Enkripsi(passwordPendaftar), "user", 0]
   global dataBaru
   dataBaru = my_append(data, 6, data_baru)
   print()
-  print('{:^120s}'.format("Registrasi akun",usernamePendaftar,"berhasil!"))
+  print('{:^120s}'.format("Registrasi akun "+usernamePendaftar+" berhasil!"))
   print()
   print('{:^120s}'.format("*"*120))
   #print(data)

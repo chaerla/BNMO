@@ -10,6 +10,7 @@
 # 4 = role
 # 5 = saldo
 import os
+from b01_Cipher import Dekripsi
 import time
 def my_append(arr, kol, data_baru):
   n_eff = my_len(arr) + 1  
@@ -38,10 +39,10 @@ def FormulirLogIn(data):
 
 #PENCARI NOMOR ID PENGGUNA DENGAN USERNAME PENGGUNA dari FormulirLogIn()
 def PencariUser(data, usernamePengguna):
-  for i in range (1, my_len(data)):
+  for i in range (0, my_len(data)):
     if usernamePengguna == data[i][1]: #1 untuk username
       # i sebagai id pengguna
-      if passwordPengguna == data[i][3]: #3 unutk password
+      if passwordPengguna == Dekripsi(data[i][3]): #3 unutk password
         os.system('cls' if os.name=='nt' else 'clear')
         print('{:^120s}'.format("*"*120))
         print('{:^120s}'.format("Selamat datang " + data[i][2]+"! Selamat menggunakan BNMO!"))

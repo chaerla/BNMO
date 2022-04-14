@@ -1,7 +1,9 @@
 import argparse
 import os
 import sys
+from winreg import EnableReflectionKey
 from util import loadingmsg
+from b01_Cipher import Enkripsi
 from f02_Registrasi import Registrasi
 from f03_login import LogIn
 from f04_tambahgame import tambahgame
@@ -30,17 +32,16 @@ if __name__ == "__main__":
         print('{:^120s}'.format("*"*120))
         print()
         ds = load(nama_folder)
-        user = ds[0]
+        user = [["id","username",  "nama",     "password", "role",     "saldo"],[  1,     "admin",  "admin",   Enkripsi("admin")  , "admin",    999999  ] ]
         game = ds[1]
         kepemilikan = ds[2]
         riwayat = ds[3]
 
         # Pengguna "dipaksa" untuk melakukan login sebelum dapat menggunakan fitur-fitur BNMO
-
         ## LOGIN ##
-        user_info = LogIn(user)
-        user_id = user_info[0]
-        role = user_info[1]
+        #user_info = LogIn(user)
+        #user_id = user_info[0]
+        #role = user_info[1]
 
         ###### MEMULAI PERMINTAAN COMMAND ######
         perintah = input("Masukkan perintah: ")
@@ -96,6 +97,7 @@ if __name__ == "__main__":
                tictactoe()
             # if (perintah=="lihat_game"):
                 # lihat_game(game, kepemilikan, username)
+            print()
             perintah = input("Masukkan perintah: ")
             print()
         
