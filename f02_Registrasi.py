@@ -48,9 +48,26 @@ def PeriksaUsernameUnik(data, usernamePendaftar):
       PeriksaKetentuanUsername(usernamePendaftar)
       break
 
+def GenerateIDPengguna(data):
+  JumlahUser = 0
+  for i in range (1, my_len(data)):
+    temp=""
+    for j in range (4):
+      temp+=data[i][0][j]
+    CurrID=""
+    if(temp=="USER"):
+      for k in range (4,7):
+        CurrID += data[i][0][k]
+    if (CurrID==""): CurrID="0"
+  JumlahUser = int(CurrID)
+  UserID = str(JumlahUser+1)
+  for _ in range (3 - my_len(UserID)):
+        UserID = "0" + str(UserID)
+  return ("USER" + str(UserID))
+
 #PENAMBAHAN PENGGUNA BARU DI TABEL DATA
 def PemasukanDataPengggunaBaru(data, usernamePendaftar, namaPendaftar, passwordPendaftar):
-  idPengguna = my_len(data)
+  idPengguna = GenerateIDPengguna(data)
   data_baru = [idPengguna, usernamePendaftar, namaPendaftar, Enkripsi(passwordPendaftar), "user", 0]
   global dataBaru
   dataBaru = my_append(data, 6, data_baru)
@@ -91,8 +108,8 @@ def Registrasi(user):
   #print(dataBaru)
 
 # testing fungsi
-# user = user = [["id","username","nama","password","role","saldo"],[1, "admin", "admin", "admin", "admin", 999999], [2, "luffy", "Monkey D. Luffy", "iamsungod", "user", 999999]]
+# user = user = [["id","username","nama","password","role","saldo"],["ADMIN001", "admin", "admin", "admin", "admin", 999999], ["USER001", "luffy", "Monkey D. Luffy", "iamsungod", "user", 999999], ["USER100", "luffy", "Monkey D. Luffy", "iamsungod", "user", 999999]]
 # Registrasi(user)
 # print(dataBaru)
-#print(PemasukanDataPengggunaBaru(data, usernamePendaftar, namaPendaftar, passwordPendaftar))
+# print(PemasukanDataPengggunaBaru(data, usernamePendaftar, namaPendaftar, passwordPendaftar))
 #print(data) masalah karena di global data kembali ke kondisi awal data (tanpa penambahan data dari registrasi)

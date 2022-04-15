@@ -26,7 +26,6 @@ def search_game_id (game, kepemilikan, username):
         # if (kepemilikan[i][1] == username):
             # game_id = kepemilikan[i][0]
     found = False
-    print("search my_game")
     id_game = input("Masukkan ID Game: ")
     tahun_rilis = input("Masukkan Tahun Rilis Game: ")
     game_cnt = 0 # Variabel untuk menyimpan jumlah game

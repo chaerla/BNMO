@@ -60,15 +60,6 @@ def CariGame(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasukan):
       # BeliGame(dataUser, game, kepemilikan, riwayat, idPengguna)
       break
 
-#CEK STOK di game.csv
-def CekStokGame(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasukan, idBeliGame):
-  if game[idBeliGame][5] > 0:
-    CekKepemilikan(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasukan, idBeliGame)
-  elif game[idBeliGame][5] == 0:
-    print("Maaf. Stok game",game[idBeliGame][1],"habis")
-    #FormulirBeliGame()
-    BeliGame(dataUser, game, kepemilikan, riwayat)
-
 #CEK KEPEMILIKAN di kepemilikan.csv
 def CekKepemilikan(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasukan, idBeliGame):
   for i in range (my_len(kepemilikan)):
@@ -83,11 +74,15 @@ def CekKepemilikan(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasuk
 
 #PROSES BELI
 def ProsesBeli(dataUser, game, kepemilikan, riwayat, idGameMasukan, idBeliGame, idPengguna):
-  if dataUser[idPengguna][5] >= game[idBeliGame][4]:
+  for i in range (my_len(dataUser)):
+    if dataUser[i][0] == idPengguna :
+      indeksPengguna = i
+      break
+  if dataUser[indeksPengguna][5] >= game[idBeliGame][4]:
     global ret 
     #5 untuk saldo di user.csv #4 untuk harga di game.csv
     ###PERUBAHAN SALDO
-    dataUser[idPengguna][5] = dataUser[idPengguna][5] - game[idBeliGame][4]
+    dataUser[indeksPengguna][5] = dataUser[indeksPengguna][5] - game[idBeliGame][4]
     ###APPEND KEPEMILIKAN
     dataKepemilikanBaru = [idGameMasukan, idPengguna]
     kepemilikan = my_append(kepemilikan, 2, dataKepemilikanBaru)
@@ -111,6 +106,10 @@ def ProsesBeli(dataUser, game, kepemilikan, riwayat, idGameMasukan, idBeliGame, 
     # BeliGame(dataUser, game, kepemilikan, riwayat)
 
 def BeliGame(dataUser, game, kepemilikan, riwayat, idPengguna):
+  print('{:^120s}'.format("*"*120))
+  print('{:^120s}'.format("BELI GAME"))
+  print('{:^120s}'.format("*"*120))
+  global ret
   ret = [dataUser, game, kepemilikan, riwayat]
   FormulirBeliGame()
   CariGame(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasukan)

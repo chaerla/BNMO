@@ -2,26 +2,29 @@ from util import my_append
 from util import my_len
 
 def tambahgame(game):
+    print('{:^120s}'.format("*"*120))
+    print('{:^120s}'.format("TAMBAH GAME KE TOKO"))
+    print('{:^120s}'.format("*"*120))
     nama_game = input("Masukkan nama game: ")
     kategori = input("Masukkan kategori: ")
-    tahun_rilis = int(input("Masukkan tahun rilis: "))
-    harga = int(input("Masukkan harga: "))
-    stok_awal = int(input("Masukkan stok awal: "))
+    tahun_rilis = input("Masukkan tahun rilis: ")
+    harga = input("Masukkan harga: ")
+    stok_awal = input("Masukkan stok awal: ")
     
     while(nama_game=="") or (kategori=="") or (tahun_rilis=="") or (harga=="") or (stok_awal==""):
         print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")
         nama_game = input("Masukkan nama game: ")
         kategori = input("Masukkan kategori: ")
-        tahun_rilis = int(input("Masukkan tahun rilis: "))
-        harga = int(input("Masukkan harga: "))
-        stok_awal = int(input("Masukkan stok awal: "))
+        tahun_rilis = input("Masukkan tahun rilis: ")
+        harga = input("Masukkan harga: ")
+        stok_awal = input("Masukkan stok awal: ")
     # cari id_game, ini agak ribet mikir logikanya jadi aku langsung code aja tar aku jelasin kalau meet
     temp = str(my_len(game))
     for _ in range (3 - my_len(temp)):
         temp = "0" + str(temp)
     id_game = "GAME" + str(temp)
     # masukkan semua elemen ke sebuah array
-    data_baru = [id_game, nama_game, kategori, tahun_rilis, harga, stok_awal]
+    data_baru = [id_game, nama_game, kategori, int(tahun_rilis), int(harga), int(stok_awal)]
     print()
     print('{:^120s}'.format("Game "+nama_game+" berhasil ditambahkan!"))
     print()

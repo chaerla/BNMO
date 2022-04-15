@@ -13,6 +13,9 @@
 #  1 [GAME001,BNMO - Play Along With Crypto,Adventure,2022,100000,1].
 #  2 [GAME002;Dasar Pemrograman;Coding;2022;0;10]]
 def list_game (game, kepemilikan, user_id):
+    print('{:^120s}'.format("*"*120))
+    print('{:^120s}'.format("LIST GAME "+user_id))
+    print('{:^120s}'.format("*"*120))
     # for i in range len(kepemilikan):
         # if (kepemilikan[i][1] == username):
             # game_id = kepemilikan[i][0]

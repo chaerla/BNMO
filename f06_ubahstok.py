@@ -11,6 +11,9 @@
 
 # parameter dalam fungsi adalah game, karena kitaa pakai array game bukan user
 def ubah_stok(game):
+    print('{:^120s}'.format("*"*120))
+    print('{:^120s}'.format("UBAH STOK GAME"))
+    print('{:^120s}'.format("*"*120))
     id = str(input("Masukkan ID game: "))
     stok = int(input("Masukkan jumlah: "))
     found = False # boolean untuk ngecek game ada ga di daftar game
@@ -36,6 +39,7 @@ def ubah_stok(game):
         print("Tidak ada game dengan ID tersebut!")
         print()
         # coba code disini buat tanganin kasus kalau game ga ada ditemukan di array game (baca spek)
+    print('{:^120s}'.format("*"*120))
     return game
 
 # test fungsi

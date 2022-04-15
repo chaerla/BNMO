@@ -64,6 +64,7 @@ def PencariUser(data, usernamePengguna):
 #RANGKUMAN PEOSEDUR DAN FUNGSI
 def LogIn(data):
   print('{:^120s}'.format("Lakukan LogIn untuk menggunakan BNMO"))
+  print()
   FormulirLogIn(data)
   return ret
 

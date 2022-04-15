@@ -1,3 +1,5 @@
+from util import my_lower
+
 def search_game_toko (game):
     print("*"*120)
     print('{:^120s}'.format("CARI GAME DI TOKO"))
@@ -11,7 +13,7 @@ def search_game_toko (game):
     data_cnt = 0
     print("*"*120)
     for data in game:
-        if (not(game_input=="" and id_input =="" and harga_input=="" and kategori_input =="" and tahun_input =="") and(data[0] == id_input or id_input =="") and (data[1] == game_input or game_input =="") and (data[2] == kategori_input or kategori_input == "") and (tahun_input=="" or int(tahun_input) == data[3]) and (harga_input=="" or data [4])) or (game_input=="" and id_input =="" and harga_input=="" and kategori_input =="" and tahun_input =="" and data_cnt!=0):
+        if (not(game_input=="" and id_input =="" and harga_input=="" and kategori_input =="" and tahun_input =="") and(data[0] == id_input or id_input =="") and (my_lower(data[1]) == my_lower(game_input) or game_input =="") and (my_lower(data[2]) == my_lower(kategori_input) or kategori_input == "") and (tahun_input=="" or int(tahun_input) == data[3]) and (harga_input=="" or data [4])) or (game_input=="" and id_input =="" and harga_input=="" and kategori_input =="" and tahun_input =="" and data_cnt!=0):
             if(game_cnt==0):
                 print('{:^120s}'.format("DAFTAR GAME YANG MEMENUHI KRITERIA PENCARIAN:"))
             game_cnt+=1

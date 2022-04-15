@@ -22,7 +22,7 @@ def topup(user):
             if (data[5] + saldo<0):
                 print(saldo-data[5])
                 print("Masukan tidak valid.")
-            elif (data[5] < 0):
+            elif (data[5] + saldo < 0):
                 print("Saldo", username, "berhasil dikurangi sebanyak",-saldo)
             else:
                 print("Saldo sebesar",saldo,"berhasil ditambahkan ke user",username,"!")

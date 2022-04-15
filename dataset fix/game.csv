@@ -1,3 +1,11 @@
 id;nama;kategori;tahun_rilis;harga;stok
 GAME001;BNMO - Play Along With Crypto;Adventure;2022;100000;1
 GAME002;Dasar Pemrograman;Coding;2022;0;10
+GAME003;Minecraft;Sandbox;2011;500000;17
+GAME004;Grand Theft Auto V;Action;2013;300000;20
+GAME005;DOTA2;MOBA;2013;0;50
+GAME006;Genshin Impact;RPG;2020;0;50
+GAME007;Phasmophobia;Horror;2020;98000;14
+GAME008;Valorant;FPS;2020;0;20
+GAME009;Counter Strike : Global Offensive;FPS;2012;0;20
+GAME010;The Witcher;RPG;2007;150000;5

@@ -51,3 +51,18 @@ def loadingmsg(msg):
         os.system('cls' if os.name=='nt' else 'clear')
         print (msg[:i])
         sleep(0.5)
+
+def my_lower(string):
+    ret = ""
+    for i in range (my_len(string)):
+        if (65 <= ord(string[i]) <= 90):
+            ret += chr(ord(string[i]) + 32)
+        else:
+            ret += string[i]
+    return ret
+
+def errormsg_user():
+    print("Maaf, Anda tidak memiliki izin untuk mengakses perintah tersebut. Perintah tersebut hanya dapat diakses oleh administrator.")
+
+def errormsg_admin():
+    print("Maaf, Anda tidak dapat mengakses perintah tersebut. Perintah tersebut hanya dapat diakses oleh user.")
