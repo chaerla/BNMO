@@ -12,21 +12,22 @@
 # user[1][0] = 1 (baris ke-1, kolom ke-0)
 # user[1][1] = "admin"
 # user[2][1] = "luffy"
-
+from util import harga_to_int
 def topup(user):
     username = input("Masukkan username: ")
-    saldo = int(input("Masukkan saldo: "))
+    saldo = input("Masukkan saldo: ")
     flag = False
     for data in user: # loop ini untuk mengiterasi semua baris dalam array user, artinya data = user[1], user[2], dst...
         if (data[1]==username): # data[1] maksudnya kolom ke 1 (kolom username), artinya disini kita ngecek apakah username pada baris tersebut sama dengan username input user
-            if (data[5] + saldo<0):
+            if (data[5] + harga_to_int(saldo)<0):
                 print(saldo-data[5])
                 print("Masukan tidak valid.")
-            elif (data[5] + saldo < 0):
-                print("Saldo", username, "berhasil dikurangi sebanyak",-saldo)
+            elif (data[5] + harga_to_int(saldo) < 0):
+                print("Saldo", username, "berhasil dikurangi sebanyak",-harga_to_int(saldo))
+                data[5]+=harga_to_int(saldo)
             else:
                 print("Saldo sebesar",saldo,"berhasil ditambahkan ke user",username,"!")
-                data[5]+=saldo 
+                data[5]+=harga_to_int(saldo)
             flag = True
     if (not(flag)):
         print("Username", username, "tidak ditemukan")

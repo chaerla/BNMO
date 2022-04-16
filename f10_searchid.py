@@ -12,19 +12,27 @@
 #  0 [[id,   nama,  kategori,    tahun_rilis    ,harga      ,stok],
 #  1 [GAME001,BNMO - Play Along With Crypto,Adventure,2022,100000,1].
 #  2 [GAME002;Dasar Pemrograman;Coding;2022;0;10]]
+from util import konversi_harga
 
 def print_game(data, game_cnt):
-    print('{:^3s}'.format(str(game_cnt)+"."), end="")
+    if(game_cnt==1):
+        print('{:^120s}'.format("DAFTAR GAME YANG MEMENUHI KRITERIA PENCARIAN:"))
+        print()
+        print('{:^4s}'.format("NO."), end="")
+        print('{:^12s}'.format("ID GAME")+"|",end="")
+        print('{:^46s}'.format("NAMA GAME")+"|",end="")
+        print('{:^20s}'.format("KATEGORI")+"|",end="")
+        print('{:^16s}'.format("TAHUN RILIS")+"|",end="")
+        print('{:^16s}'.format("HARGA")+"|")
+        print("-"*120)
+    print('{:^4s}'.format(str(game_cnt)+"."), end="")
     print('{:^12s}'.format(data[0])+"|",end="")
-    print('{:^40s}'.format(data[1])+"|",end="")
-    print('{:^15s}'.format(data[2])+"|",end="")
-    print('{:^6s}'.format(str(data[3]))+"|",end="")
-    print('{:^10s}'.format(str(data[4]))+"|")
+    print('{:^46s}'.format(data[1])+"|",end="")
+    print('{:^20s}'.format(data[2])+"|",end="")
+    print('{:^16s}'.format(str(data[3]))+"|",end="")
+    print('{:^16s}'.format(konversi_harga(data[4]))+"|")
 
 def search_game_id (game, kepemilikan, username):
-    # for i in range len(kepemilikan):
-        # if (kepemilikan[i][1] == username):
-            # game_id = kepemilikan[i][0]
     found = False
     id_game = input("Masukkan ID Game: ")
     tahun_rilis = input("Masukkan Tahun Rilis Game: ")

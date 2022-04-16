@@ -12,6 +12,7 @@
 #  0 [[id,   nama,  kategori,    tahun_rilis    ,harga      ,stok],
 #  1 [GAME001,BNMO - Play Along With Crypto,Adventure,2022,100000,1].
 #  2 [GAME002;Dasar Pemrograman;Coding;2022;0;10]]
+from util import konversi_harga
 def list_riwayat (riwayat, username):
     # for i in range len(kepemilikan):
         # if (kepemilikan[i][1] == username):

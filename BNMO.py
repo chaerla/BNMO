@@ -1,11 +1,7 @@
 import argparse
 import os
 import sys
-from b01_Cipher import Enkripsi
-from util import loadingmsg
-from util import find_path
-from util import errormsg_admin
-from util import errormsg_user
+from util import loadingmsg, find_path, errormsg_admin, errormsg_user
 from f02_Registrasi import Registrasi
 from f03_login import LogIn
 from f04_tambahgame import tambahgame
@@ -33,6 +29,7 @@ if __name__ == "__main__":
     else:
         loadingmsg("Loading")
         print()
+        # WELCOME MESSAGE
         print('{:^120s}'.format("*"*120))
         print()
         print('{:^120s}'.format("Selamat Datang di BNMO!"))
@@ -48,6 +45,8 @@ if __name__ == "__main__":
         print('{:^120s}'.format("*"*120))
         print()
         ds = load(nama_folder)
+        
+        # MEMASUKKAN DATA HASIL LOAD KE DALAM ARRAY
         user = ds[0]
         game = ds[1]
         kepemilikan = ds[2]

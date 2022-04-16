@@ -50,14 +50,9 @@ def CariGame(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasukan):
         CekKepemilikan(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasukan, idBeliGame)
       else:
         print("Stok game habis")
-     # CekStokGame(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasukan, idBeliGame)
-      #CekKepemilikan(dataUser, game, kepemilikan, idPengguna, idGameMasukan) #, idBeliGame)
       break
     elif i == my_len(game) - 1:
       print("Game tidak ditemukan")
-      #FormulirBeliGame()
-      # ga usah maksa buat tetep beli game. fungsi berakhir.
-      # BeliGame(dataUser, game, kepemilikan, riwayat, idPengguna)
       break
 
 #CEK KEPEMILIKAN di kepemilikan.csv
@@ -65,10 +60,6 @@ def CekKepemilikan(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasuk
   for i in range (my_len(kepemilikan)):
     if idPengguna == kepemilikan[i][1] and idGameMasukan == kepemilikan[i][0]: # 0 untuk game_id dan 1 untuk user_id pada kepemilikan.csv
       print("Game",game[idBeliGame][1],"sudah dimilki")
-      #FormulirBeliGame()
-      # ga usah maksa buat beli game (ga usah isi form lagi). fungsi selesai
-      # BeliGame(dataUser, game, kepemilikan, riwayat)
-      # break
     elif i == my_len(kepemilikan) - 1:
       ProsesBeli(dataUser, game, kepemilikan, riwayat, idGameMasukan, idBeliGame, idPengguna)
 
@@ -86,24 +77,15 @@ def ProsesBeli(dataUser, game, kepemilikan, riwayat, idGameMasukan, idBeliGame, 
     ###APPEND KEPEMILIKAN
     dataKepemilikanBaru = [idGameMasukan, idPengguna]
     kepemilikan = my_append(kepemilikan, 2, dataKepemilikanBaru)
-    #print(kepemilikan)
-    #print(dataUser)
     ###PERUBAHAN STOK di game.csv
     game[idBeliGame][5] = game[idBeliGame][5] - 1
-    #print(game)
     ###APPEND di riwayat.csv
-    # disini kita pakai time.strftime("%Y"), karena tahunnya ga pasti 2022, jadi kita pakai modul time.
     riwayat_baru = [idGameMasukan, game[idBeliGame][1], game[idBeliGame][4], idPengguna, int(time.strftime("%Y"))]
     riwayat = my_append(riwayat, 5, riwayat_baru)
     ret = [dataUser, game, kepemilikan, riwayat]
-    #print(riwayat)
     print("Game",game[idBeliGame][1],"berhasil dibeli")
   else :
-    # kalau pakai "Saldo {namaPengguna} tidak cukup." di aku errorr soalnya namaPengguna undefined.
     print("Saldo Anda tidak cukup.")
-    #FormulirBeliGame()
-    # ga usah maksa buat beli game baru
-    # BeliGame(dataUser, game, kepemilikan, riwayat)
 
 def BeliGame(dataUser, game, kepemilikan, riwayat, idPengguna):
   print('{:^120s}'.format("*"*120))

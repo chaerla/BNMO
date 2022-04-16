@@ -61,8 +61,30 @@ def my_lower(string):
             ret += string[i]
     return ret
 
+# fungsi mengubah harga ke integer. mis 100.000 menjadi 100000
+def harga_to_int(harga):
+    temp = ""
+    for i in range (my_len(harga)):
+        if(harga[i]!="."):
+            temp+=harga[i]
+    return int(temp)
+
+# fungsi mengubah integer menjadi string dengan separator ribuan. mis 100000 menjadi 100.000
+def konversi_harga(harga):
+    temp = str(harga)
+    ret = ""
+    cnt = 1
+    for i in range (my_len(temp)-1, -1, -1):
+        ret = temp[i] + ret
+        if(cnt%3==0) and i!=0:
+            ret = "." + ret
+        cnt+=1
+    return ret
+
+# error message untuk user
 def errormsg_user():
     print("Maaf, Anda tidak memiliki izin untuk mengakses perintah tersebut. Perintah tersebut hanya dapat diakses oleh administrator.")
 
+# error message untuk admin
 def errormsg_admin():
     print("Maaf, Anda tidak dapat mengakses perintah tersebut. Perintah tersebut hanya dapat diakses oleh user.")

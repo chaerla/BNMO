@@ -3,6 +3,7 @@ from util import loadingmsg
 from time import sleep
 
 def exit(sudah_save, user, game, kepemilikan, riwayat):
+    # Jika belum melakukan ssave sebelumnya
     if(not(sudah_save)):
         pilih = str(input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n): "))
         while(pilih!="Y" and pilih!="y" and pilih!="N" and pilih!="n"):
@@ -11,9 +12,9 @@ def exit(sudah_save, user, game, kepemilikan, riwayat):
             pilih = str(input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n): "))
         if pilih == "y" or pilih == "Y":
             save(user, game, kepemilikan, riwayat)
-        else: print("Anda tidak melakukan penyimpanan file")
+        else: print("Anda tidak melakukan penyimpanan file. Perubahan tidak tersimpan.")
     print()
-    sleep(3)
+    sleep(2)
     loadingmsg("Exiting")
     print('{:^120s}'.format("*"*120))
     print()

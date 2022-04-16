@@ -10,9 +10,6 @@ def find_path(nama_folder):
         if nama_folder in root:
             path = os.path.join(path, root)
             return path
-            #if (root!='.'):
-                #root+="\\"
-            #path += root
 
 def read_csv(nama_folder, cnt_kolom, nama_file):
     with open(os.path.join(nama_folder, nama_file)) as file:
@@ -25,11 +22,6 @@ def read_csv(nama_folder, cnt_kolom, nama_file):
             i+=1
         return res
 
-#def to_int(arr, kolom_int):
-#    for i in kolom_int:
-#        for j in my_len(arr):
-#            arr[j][i] = int(arr[j][i])
-#    return arr
 
 def load(nama_folder):
     user = read_csv(find_path(nama_folder), 6, "user.csv")
@@ -37,6 +29,8 @@ def load(nama_folder):
     kepemilikan = read_csv(find_path(nama_folder), 2, "kepemilikan.csv")
     riwayat = read_csv(find_path(nama_folder), 5, "riwayat.csv")
     return [user, game, kepemilikan, riwayat]
-#nama_folder=input()
-#print(find_path(nama_folder))
-#load(find_path(nama_folder))
+    
+# testing
+# nama_folder=input()
+# print(find_path(nama_folder))
+# load(find_path(nama_folder))
