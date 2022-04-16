@@ -2,12 +2,12 @@ import argparse
 import os
 import sys
 from util import loadingmsg, find_path, errormsg_admin, errormsg_user
-from f02_Registrasi import Registrasi
-from f03_login import LogIn
+from f02_registrasi import registrasi
+from f03_login import login
 from f04_tambahgame import tambahgame
 from f05_ubahgame import ubahgame
 from f06_ubahstok import ubah_stok
-from f08_MembeliGame import BeliGame
+from f08_beligame import BeliGame
 from f09_listgame import list_game
 from f10_searchid import search_game_id
 from f11_searchtoko import search_game_toko
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         # Pengguna "dipaksa" untuk melakukan login sebelum dapat menggunakan fitur-fitur BNMO
 
         ## LOGIN ##
-        user_info = LogIn(user)
+        user_info = login(user)
         user_id = user_info[0]
         role = user_info[1]
 
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         while(perintah!="exit"):
             # PEMANGGILAN F02 - REGISTER
             if (perintah=="register"):
-                if (role=="admin"): user = Registrasi (user)
+                if (role=="admin"): user = registrasi (user)
                 else: errormsg_user()
             
             # PEMANGGILAN F04 - TAMBAH GAME
