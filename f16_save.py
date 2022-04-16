@@ -45,3 +45,4 @@ def save (user, game, kepemilikan, riwayat):
     write_csv (nama_folder, kepemilikan, "kepemilikan.csv")
     write_csv (nama_folder, riwayat, "riwayat.csv")
     print("Data telah tersimpan pada folder", nama_folder)
+

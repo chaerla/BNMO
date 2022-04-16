@@ -1,13 +1,31 @@
+from f16_save import save
+from util import loadingmsg
+from time import sleep
 
-print(">>> exit")
-
-exit = False
-pilih = str(input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n): "))
-if pilih == "y" or "Y":
-    save_data = str(input("Masukkan nama folder penyimpanan: "))
-    save_data(save) #maksud aku di sini bakal jalanin fungsi save dari modul 16
-    exit = True # program akan keluar (exit)
-elif pilih == "n" or "N":
-    exit = True # tidak ada yang perlu disave
-else:
-    pilih = str(input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n): "))
+def exit(sudah_save, user, game, kepemilikan, riwayat):
+    if(not(sudah_save)):
+        pilih = str(input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n): "))
+        while(pilih!="Y" and pilih!="y" and pilih!="N" and pilih!="n"):
+            print("Maaf. Jawaban tidak dikenali. Isi dengan Y atau y untuk menyimpan file.")
+            print("Isi dengan N atau n jika tidak ingin melakukan penyimpanan file.")
+            pilih = str(input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n): "))
+        if pilih == "y" or pilih == "Y":
+            save(user, game, kepemilikan, riwayat)
+        else: print("Anda tidak melakukan penyimpanan file")
+    print()
+    sleep(3)
+    loadingmsg("Exiting")
+    print('{:^120s}'.format("*"*120))
+    print()
+    print('{:^120s}'.format("Terima kasih telah menggunakan BNMO!"))
+    print('{:^120s}'.format("""
+                                     ____    _   _      __  __    U  ___ u 
+                                  U | __")u | \ |"|   U|' \/ '|u   \/"_ \/ 
+                                   \|  _ \/<|  \| |>  \| |\/| |/   | | | | 
+                                    | |_) |U| |\  |u   | |  | |.-,_| |_| | 
+                                    |____/  |_| \_|    |_|  |_| \_)-\___/  
+                                   _|| \\_  ||   \\,-.<<,-,,-.       \\    
+                                  (__) (__) (_")  (_/  (./  \.)     (__)   
+    """))
+    print('{:^120s}'.format("*"*120))
+    

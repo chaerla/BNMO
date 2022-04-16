@@ -1,27 +1,30 @@
 def ubahgame (game):
+    print('{:^120s}'.format("*"*120))
+    print('{:^120s}'.format("UBAH GAME"))
+    print('{:^120s}'.format("*"*120))
+    
     id_input = input("Masukkan ID game: ")
     game_input = input("Masukkan nama game: ")
     kategori_input = input("Masukkan kategori: ")
-    tahun_input = int(input("Masukkan tahun rilis: "))
-    harga_input = int(input("Masukkan harga: "))
+    tahun_input = input("Masukkan tahun rilis: ")
+    harga_input = input("Masukkan harga: ")
+    found = False
     for data in game:
         if (data[0] == id_input):
+            found = True
             if (game_input!=""): 
                 data[1] = game_input
-            elif (game_input==""): 
-                data[1] = data[1]
-            elif(kategori_input !=""): 
+            if(kategori_input !=""): 
                 data[2] = kategori_input
-            elif (kategori_input==""): 
-                data[2] = data[2]
-            elif(tahun_input !=""): 
-                data[3] = tahun_input
-            elif (tahun_input==""): 
-                data[3] = data[3]
-            elif(harga_input !=""): 
-                data[4] = harga_input
-            elif (harga_input==""): 
-                data[4] = data[4]
+            if(tahun_input !=""): 
+                data[3] = int(tahun_input)
+            if(harga_input !=""): 
+                data[4] = int(harga_input)
+            print("Data", data[0],"berhasil diubah.")
+            break
+    if (not(found)):
+        print("Game dengan ID", id_input,"tidak ditemukan.")
+
     return game
             
         

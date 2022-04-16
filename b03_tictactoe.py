@@ -62,9 +62,9 @@ def input_player(c):
 
 # cetak pesan game berakhir
 def game_end():
-    print('{:^40s}'.format("*"*40))
-    print('{:^40s}'.format("Game berakhir"))
-    print('{:^40s}'.format("*"*40))
+    print('{:^120s}'.format("*"*120))
+    print('{:^120s}'.format("Game berakhir"))
+    print('{:^120s}'.format("*"*120))
 
 # prosedur tictactoe
 def tictactoe():   
@@ -75,9 +75,9 @@ def tictactoe():
     papan =[["#" for j in range (3)] for i in range (3)]
     won = '#'
     isFull = False
-    print('{:^40s}'.format("*"*40))
-    print('{:^40s}'.format("Selamat Bermain TicTacToe!"))
-    print('{:^40s}'.format("*"*40))
+    print('{:^120s}'.format("*"*120))
+    print('{:^120s}'.format("Selamat Bermain TicTacToe!"))
+    print('{:^120s}'.format("*"*120))
     print("Legenda: ")
     print("Kosong: #")
     print("Pemain 1: X")

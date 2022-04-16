@@ -46,10 +46,10 @@ def my_append(arr, kol, data_baru):
 
 # print message bergerak
 def loadingmsg(msg):
-    msg = msg+'...'
     for i in range(len(msg)-3, len(msg)+1, 1):
         os.system('cls' if os.name=='nt' else 'clear')
-        print (msg[:i])
+        print (msg)
+        msg+="."
         sleep(0.5)
 
 def my_lower(string):
