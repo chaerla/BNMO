@@ -10,21 +10,8 @@
 # 4 = role
 # 5 = saldo
 from b01_Cipher import Enkripsi
-
-def my_append(arr, kol, data_baru):
-    n_eff = my_len(arr) + 1
-    arrtemp = [["" for j in range (kol)] for i in range (n_eff)]
-    for i in range (my_len(arr)):
-        for j in range (kol):
-            arrtemp[i][j]=arr[i][j]
-    arrtemp[n_eff-1] = data_baru
-    return arrtemp
-
-def my_len(arr):
-    len = 0
-    for i in arr:
-        len+=1
-    return len 
+from util import my_append,my_len
+import os
 
 #REGISTRASI
 def FormulirRegistrasi(data):
@@ -98,7 +85,8 @@ def PeriksaKetentuanUsername(usernamePendaftar):
     i = i + 1
 
 #RANGKUMAN PROSEDUR & FUNGSI
-def Registrasi(user):
+def registrasi(user):
+  os.system('cls' if os.name=='nt' else 'clear')
   global data
   data = user
   print('{:^120s}'.format("*"*120))

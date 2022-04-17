@@ -38,6 +38,7 @@ def write_csv (nama_folder, arr_file, nama_file):
 
 # Fungsi save
 def save (user, game, kepemilikan, riwayat):
+    os.system('cls' if os.name=='nt' else 'clear')
     nama_folder = input("Masukkan nama folder penyimpanan: ")
     loadingmsg("Saving")
     write_csv (nama_folder, user, "user.csv")

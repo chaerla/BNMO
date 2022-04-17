@@ -8,8 +8,10 @@
 # game[1][0] = "GAME001" (baris ke-1, kolom ke-0)
 # game[1][1] = "BNMO - Play Along With Crypto"
 # game[2][1] = "Dasar Pemrograman"
+import os
 
 def ubah_stok(game):
+    os.system('cls' if os.name=='nt' else 'clear')
     print('{:^120s}'.format("*"*120))
     print('{:^120s}'.format("UBAH STOK GAME"))
     print('{:^120s}'.format("*"*120))

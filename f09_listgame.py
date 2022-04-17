@@ -13,8 +13,10 @@
 #  1 [GAME001,BNMO - Play Along With Crypto,Adventure,2022,100000,1].
 #  2 [GAME002;Dasar Pemrograman;Coding;2022;0;10]]
 from util import konversi_harga
+import os
 
 def list_game (game, kepemilikan, user_id):
+    os.system('cls' if os.name=='nt' else 'clear')
     print('{:^120s}'.format("*"*120))
     print('{:^120s}'.format("LIST GAME "+user_id))
     print('{:^120s}'.format("*"*120))

@@ -2,8 +2,7 @@ import argparse
 import os
 import sys
 from util import loadingmsg, find_path, errormsg_admin, errormsg_user
-from f02_registrasi import registrasi
-from f03_login import login
+from f03_login import LogIn
 from f04_tambahgame import tambahgame
 from f05_ubahgame import ubahgame
 from f06_ubahstok import ubah_stok
@@ -17,34 +16,10 @@ from f15_load import load
 from f16_save import save
 from f17_exit import exit
 from b03_tictactoe import tictactoe
-
+from f02_registrasi import registrasi
 
 if __name__ == "__main__":    
-    parser = argparse.ArgumentParser()
-    parser.add_argument("nama_folder", type = str)
-    args = parser.parse_args()
-    nama_folder = args.nama_folder
-    if(find_path(nama_folder)==""):
-        print("Folder "+ nama_folder+  " tidak ditemukan.")
-    else:
-        loadingmsg("Loading")
-        print()
-        # WELCOME MESSAGE
-        print('{:^120s}'.format("*"*120))
-        print()
-        print('{:^120s}'.format("Selamat Datang di BNMO!"))
-        print('{:^120s}'.format("""
-                                         ____    _   _      __  __    U  ___ u 
-                                      U | __")u | \ |"|   U|' \/ '|u   \/"_ \/ 
-                                       \|  _ \/<|  \| |>  \| |\/| |/   | | | | 
-                                        | |_) |U| |\  |u   | |  | |.-,_| |_| | 
-                                        |____/  |_| \_|    |_|  |_| \_)-\___/  
-                                       _|| \\_  ||   \\,-.<<,-,,-.       \\    
-                                      (__) (__) (_")  (_/  (./  \.)     (__)   
-        """))
-        print('{:^120s}'.format("*"*120))
-        print()
-        ds = load(nama_folder)
+        ds = load()
         
         # MEMASUKKAN DATA HASIL LOAD KE DALAM ARRAY
         user = ds[0]
@@ -56,12 +31,14 @@ if __name__ == "__main__":
         # Pengguna "dipaksa" untuk melakukan login sebelum dapat menggunakan fitur-fitur BNMO
 
         ## LOGIN ##
-        user_info = login(user)
+        user_info = LogIn(user)
         user_id = user_info[0]
         role = user_info[1]
 
         ###### MEMULAI PERMINTAAN COMMAND ######
-        perintah = input("Masukkan perintah: ")
+        print()
+        print("Ketik help untuk mengakses daftar commands.")
+        perintah = input(">>>")
         print()
         # print(user)
         while(perintah!="exit"):
@@ -132,10 +109,10 @@ if __name__ == "__main__":
             
             else:
                 print()
-                print("Maaf. perintah tidak dikenali. Ketik help untuk melihat daftar perintah.")
+                print("Maaf. perintah tidak dikenali. Ketik help untuk melihat daftar commands.")
 
             print()
-            perintah = input("Masukkan perintah: ")
+            perintah = input(">>>")
             print()
 
         exit(sudah_save, user, game, kepemilikan, riwayat)

@@ -1,6 +1,8 @@
 from util import harga_to_int
+import os
 
 def ubahgame (game):
+    os.system('cls' if os.name=='nt' else 'clear')
     print('{:^120s}'.format("*"*120))
     print('{:^120s}'.format("UBAH GAME"))
     print('{:^120s}'.format("*"*120))

@@ -1,6 +1,8 @@
 from util import my_append, my_len, harga_to_int
+import os
 
 def tambahgame(game):
+    os.system('cls' if os.name=='nt' else 'clear')
     print('{:^120s}'.format("*"*120))
     print('{:^120s}'.format("TAMBAH GAME KE TOKO"))
     print('{:^120s}'.format("*"*120))

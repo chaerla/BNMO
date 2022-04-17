@@ -11,21 +11,7 @@
 # 5 = saldo
 import os
 from b01_Cipher import Dekripsi
-import time
-def my_append(arr, kol, data_baru):
-  n_eff = my_len(arr) + 1  
-  arrtemp = [["" for j in range (kol)] for i in range (n_eff)]
-  for i in range (my_len(arr)):
-    for j in range (kol):
-      arrtemp[i][j]=arr[i][j]
-  arrtemp[n_eff-1] = data_baru
-  return arrtemp
-
-def my_len(arr):
-  len = 0
-  for i in arr:
-    len+=1
-  return len 
+from util import my_len
 
 
 #INPUT DARI PENGGUNA UNTUK LOG IN

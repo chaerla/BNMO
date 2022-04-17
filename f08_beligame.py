@@ -8,28 +8,15 @@
 #KAMUS
 #idGameMasukan = input dari pengguna
 #dataUser = array of array user.csv
-#kepemilikan = array of array kepemilikan.csv
+#kepemilikan array of array kepemilikan.csv
 #game = array of array game.csv
 #riwayat = array of array riwayat.csv
 
 #idBeliGame = variabel untuk menyimpan baris game yang diinginkan pada game.csv
 #idPengguna = dari nomor id pengguna dari user.csv
 import time
-
-def my_append(arr, kol, data_baru):
-  n_eff = my_len(arr) + 1  
-  arrtemp = [["" for j in range (kol)] for i in range (n_eff)]
-  for i in range (my_len(arr)):
-    for j in range (kol):
-      arrtemp[i][j]=arr[i][j]
-  arrtemp[n_eff-1] = data_baru
-  return arrtemp
-
-def my_len(arr):
-  len = 0
-  for i in arr:
-    len+=1
-  return len 
+from util import my_append, my_len
+import os
 
 #MASUKAN UNTUK MEMBELI GAME
 def FormulirBeliGame():
@@ -60,6 +47,7 @@ def CekKepemilikan(dataUser, game, kepemilikan, riwayat, idPengguna, idGameMasuk
   for i in range (my_len(kepemilikan)):
     if idPengguna == kepemilikan[i][1] and idGameMasukan == kepemilikan[i][0]: # 0 untuk game_id dan 1 untuk user_id pada kepemilikan.csv
       print("Game",game[idBeliGame][1],"sudah dimilki")
+      break
     elif i == my_len(kepemilikan) - 1:
       ProsesBeli(dataUser, game, kepemilikan, riwayat, idGameMasukan, idBeliGame, idPengguna)
 
@@ -88,6 +76,7 @@ def ProsesBeli(dataUser, game, kepemilikan, riwayat, idGameMasukan, idBeliGame, 
     print("Saldo Anda tidak cukup.")
 
 def BeliGame(dataUser, game, kepemilikan, riwayat, idPengguna):
+  os.system('cls' if os.name=='nt' else 'clear')
   print('{:^120s}'.format("*"*120))
   print('{:^120s}'.format("BELI GAME"))
   print('{:^120s}'.format("*"*120))
