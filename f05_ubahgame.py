@@ -30,7 +30,7 @@ def ubahgame (game):
     # jika game dengan id yang dimasukkan tidak ditemukan
     if (not(found)):
         print("Game dengan ID", id_input,"tidak ditemukan.")
-
+    print('{:^120s}'.format("*"*120))
     return game
             
         

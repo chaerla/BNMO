@@ -14,7 +14,9 @@ def tambahgame(game):
     
     while(nama_game=="") or (kategori=="") or (tahun_rilis=="") or (harga=="") or (stok_awal==""):
         # error handling jika ada input parameter yang kosong
+        print()
         print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")
+        print()
         nama_game = input("Masukkan nama game: ")
         kategori = input("Masukkan kategori: ")
         tahun_rilis = input("Masukkan tahun rilis: ")
@@ -30,6 +32,7 @@ def tambahgame(game):
     data_baru = [id_game, nama_game, kategori, int(tahun_rilis), harga_to_int(harga), int(stok_awal)]
     print()
     print('{:^120s}'.format("Game "+nama_game+" berhasil ditambahkan!"))
+    print('{:^120s}'.format("*"*120))
     print()
     # append array ke array game
     return my_append(game, 6, data_baru)

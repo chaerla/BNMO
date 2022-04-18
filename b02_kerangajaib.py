@@ -1,21 +1,27 @@
+import os
 import time
+import os
+
+def lcg (x):
+    a = 7
+    c = 3
+    m = 19
+    rand = (a*x + c) % m
+    return rand
 
 # prosedur untuk mencetak board tictactoe
 def kerangajaib():
-    print("kerangajaib")
-    print("Apa pertanyaanmu?", end="")
+    os.system('cls' if os.name=='nt' else 'clear')
+    print('{:^120s}'.format("*"*120))
+    print('{:^120s}'.format("KERANG AJAIB"))
+    print('{:^120s}'.format("*"*120))
+
+    print("Selamat datang di kerang ajaib BNMO. Aku punya jawaban untuk semua pertanyaanmu! ")
+    print ("Apa yang ingin Anda tanyakan?", end="")
     input()
+    arr = ["Ya", "Tidak", "Bisa Jadi", "Mungkin", "Tentunya", "Tidak Mungkin", "YNTKS"]
     local_time = time.localtime()
-    if local_time.tm_sec % 6 == 0 :
-        print ("\nYa\n")
-    elif local_time.tm_sec % 4 == 0 :
-        print ("\nTidak\n")
-    elif local_time.tm_sec % 2 == 0 :
-        print ("\nBisa Jadi\n")
-    elif local_time.tm_sec % 3 == 0 :
-        print ("\nMungkin\n")
-    elif local_time.tm_sec % 5 == 0 :
-        print ("\nTentunya\n")
-    elif local_time.tm_sec % 2 == 1 :
-        print ("\nTidak mungkin\n")
-    
+    x = lcg(local_time.tm_sec)    
+    print(arr[x%7])
+
+kerangajaib()
