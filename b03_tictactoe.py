@@ -1,5 +1,29 @@
 import time
 
+# { Nama command : tictactoe }
+# { I.S. terdapat sebuah array 2D yang diisi dengan '#' yang bertindak sebagai papan tictactoe. }
+# { F. S. : mencetak pemenang atau tie jika tidak ada pemenang }
+
+# KAMUS
+#   move_cnt : integer { Variabel yang menyimpan jumlah gerakan yang telah dilakukan }
+#   won : character { Variabel yang menyimpan pemenang }
+#   procedure input_player (input c : character, output papan: array [0..2] of array [0..2] of character )
+#   { I.S. : menerima input c, yaitu sebuah char yang menyatakan pemain X atau O. ro dan col sembarang}
+#   { F.S. : ro dan col terdefinisi, papan pada posisi ro dan col terisi sesuai karakter c}
+#   function find_winner (papan: array [0..2] of array [0..2] of character) --> character
+#   { Input : papan tictactoe}
+#   { Output : sebuah karakter yang menyatakan pemenang. Jika belum ada pemenang, mengembalikan '#' }
+#   procedure print_board (input papan: array [0..2] of array [0..2] of character)
+#   { I.S. papan terdefinisi}
+#   { F.S. papan terccetak ke layar }
+#   function (ro: integer, col: integer) --> boolean
+#   { Input : ro dan col yang menyatakan kotak pada papan}
+#   { Output : ro dan col yang telah divalidasi}
+#   procedure game_end()
+#   { F.S. pesan bahwa game telah berakhir tercetak ke layar}
+
+# REALISASI FUNGSI DAN PROSEDUR
+#   
 # prosedur untuk mencetak board tictactoe
 def print_board():
     print('{:^40s}'.format("-"*40))
@@ -68,13 +92,12 @@ def game_end():
 
 # prosedur tictactoe
 def tictactoe():   
-    global papan, won, isFull, move_cnt
+    global papan, won, move_cnt
     # sebuah variabel yang menyimpan jumlah gerakan yang telah terjadi
     move_cnt = 0
     # inisialisasi papan kosong
     papan =[["#" for j in range (3)] for i in range (3)]
     won = '#'
-    isFull = False
     print('{:^120s}'.format("*"*120))
     print('{:^120s}'.format("Selamat Bermain TicTacToe!"))
     print('{:^120s}'.format("*"*120))
