@@ -23,5 +23,3 @@ def kerangajaib():
     local_time = time.localtime()
     x = lcg(local_time.tm_sec)    
     print(arr[x%7])
-
-kerangajaib()

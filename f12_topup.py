@@ -14,6 +14,22 @@
 # user[2][1] = "luffy"
 from util import harga_to_int
 import os
+# { Input : tabel user}
+# { Output : tabel user yang terupdate berdasarkan perubahan saldo yang dilakukan. }
+
+# KAMUS
+# type tabel : array of array {tipe data pada array bergantung pada masing-masing kolom pada csv}
+# {Variabel}
+# username, saldo : string
+# flag : boolean { Variabel untuk mengecek apakah username yang dimasukkan valid. }
+# i : integer
+
+
+# {Fungsi}
+# function harga_to_int (saldo: integer) --> integer
+# { Input : sebuah string yang mewakili saldo yang akan ditambahkan } 
+# { Output : integer yang mewakili saldo yang akan ditambahkan }
+# { Fungsi ini dibuat untuk menangani kasus jika input saldo menggunakan pemisah ribuan (mis. 100.000). Realisasi fungsi ini terdapat di modul util.}
 
 def topup(user):
     os.system('cls' if os.name=='nt' else 'clear')
@@ -37,6 +53,7 @@ def topup(user):
             flag = True
     if (not(flag)):
         print("Username", username, "tidak ditemukan")
+    print("*"*120)
     return user
 
 # tes fungsi

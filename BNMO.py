@@ -1,11 +1,9 @@
-import argparse
-import os
-import sys
-from util import loadingmsg, find_path, errormsg_admin, errormsg_user
+from util import errormsg_admin, errormsg_user
 from f03_login import LogIn
 from f04_tambahgame import tambahgame
 from f05_ubahgame import ubahgame
 from f06_ubahstok import ubah_stok
+from f07_listgametoko import list_game_toko
 from f08_beligame import BeliGame
 from f09_listgame import list_game
 from f10_searchid import search_game_id
@@ -15,6 +13,7 @@ from f13_listriwayat import list_riwayat
 from f15_load import load
 from f16_save import save
 from f17_exit import exit
+from b02_kerangajaib import kerangajaib
 from b03_tictactoe import tictactoe
 from f02_registrasi import registrasi
 
@@ -97,7 +96,11 @@ if __name__ == "__main__":
             elif (perintah=="ubah_stok"):
                 if (role=="admin"): game = ubah_stok (game)
                 else: errormsg_user()
-            
+
+            # PEMANGGILAN F07
+            elif (perintah=="list_game_toko"):
+                list_game_toko(game)
+
             # PEMANGGILAN F08 - BELI GAME
             elif (perintah=="beli_game"):
                 if (role=="user"): 
@@ -141,6 +144,9 @@ if __name__ == "__main__":
             elif (perintah=="tictactoe"):
                tictactoe()
             
+            elif (perintah == "kerangajaib"):
+                kerangajaib()
+
             else:
                 print()
                 print("Maaf. perintah tidak dikenali. Ketik help untuk melihat daftar commands.")

@@ -59,6 +59,12 @@ def list_game_toko(game):
     print('{:^120s}'.format("LISTING GAME DI TOKO"))
     print('{:^120s}'.format("*"*120))
     skema = str(input("Masukkan skema sorting: "))
+
+    # Buat sebuah temporary array yang merupakan copy dari array game. Array ini yang akan di-sort
+    arr_temp = ["" for _ in range (my_len(game))]
+    for i in range (my_len(game)):
+        arr_temp[i] = game[i]
+
     if skema == "":
         print_game(game, "")
     else:
@@ -67,12 +73,13 @@ def list_game_toko(game):
             temp+=skema[i]
         tanda = skema[my_len(skema)-1]
         if (temp == "harga"):
-            my_sort(game, tanda, 4)
+            my_sort(arr_temp, tanda, 4)
         elif (temp == "tahun"):
-            my_sort(game, tanda, 3)
+            my_sort(arr_temp, tanda, 3)
         else:
             print ("Skema sorting tidak valid.")
-
+    print('{:^120s}'.format("*"*120))
 # buat ngetes
-game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10], ["GAME003","DOTA2","Moba",2003,50000,10]]
-list_game_toko(game)
+# game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10], ["GAME003","DOTA2","Moba",2003,50000,10]]
+# list_game_toko(game)
+# print(game)

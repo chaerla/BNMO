@@ -30,8 +30,18 @@ import argparse
 # procedure loadingmsg (input msg: string)
 
 def read_csv(nama_folder, cnt_kolom, nama_file):
+    # { Input : nama_folder, cnt_kolom yaitu jumlah kolom dalam file csv, nama_file yaitu nama file csv}
+    # { Output : array yang memuat data dari csv }
+
+    # KAMUS LOKAL
+    # res : tabel {variabel bertipe tabel kosong yang memuat data dari csv}
+    # i : integer
+    # lines : string
+    
+    # { fungsi berikut terdefinisi di python}
     with open(os.path.join(nama_folder, nama_file)) as file:
         lines = file.readlines()
+        # { inisialisasi sebuah variabel bertipe tabel kosong yang akan memuat data dari csv}
         res = ["" for _ in range (my_len(lines))]
         i = 0
         for line in lines:
@@ -42,13 +52,13 @@ def read_csv(nama_folder, cnt_kolom, nama_file):
 
 # FUNGSI LOAD
 def load():
-    # ARGPARSE NAMA FOLDER
+    # { ARGPARSE NAMA FOLDER }
     parser = argparse.ArgumentParser()
     try:
         parser.add_argument("nama_folder", type = str)
         args = parser.parse_args()
         nama_folder = args.nama_folder
-    except: # Error handling jika tidak diberikan nama folder
+    except: # { Error handling jika tidak diberikan nama folder }
         print("Anda tidak memberikan nama folder penyimpanan!")
         exit()
     if(find_path(nama_folder)==""):
@@ -56,7 +66,7 @@ def load():
     else:
         loadingmsg("Loading")
         print()
-        # WELCOME MESSAGE
+        # { WELCOME MESSAGE }
         print('{:^120s}'.format("*"*120))
         print()
         print('{:^120s}'.format("Selamat Datang di BNMO!"))
