@@ -1,6 +1,8 @@
 from util import my_lower, konversi_harga
+import os
 
 def search_game_toko (game):
+    os.system('cls' if os.name=='nt' else 'clear')
     print("*"*120)
     print('{:^120s}'.format("CARI GAME DI TOKO"))
     print("*"*120)

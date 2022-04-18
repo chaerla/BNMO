@@ -18,6 +18,42 @@ from f17_exit import exit
 from b03_tictactoe import tictactoe
 from f02_registrasi import registrasi
 
+# MAIN
+# Main adalah program utama yang menerima input perintah lalu menjalankan fungsi berdasarkan perintah yang diinput
+
+# KAMUS
+# Variabel
+# type tabel : array of array {tipe data pada array bergantung pada masing-masing kolom pada csv}
+# user_info : array [0..1] of string 
+# user_id : string {user_id pengguna yang sedang menggunakan BNMO}
+# role : string {role pengguna yang sedang menggunakan BNMO}
+# perintah : string 
+# user : tabel {array yang memuat data user}
+# game : tabel {array yang memuat data game}
+# kepemilikan : tabel (array yang memuat data kepemilikan)
+# riwayat : tabel {array yang memuat data riwayat}
+# sudah_save : boolean {mengecek apakah user telah melakukan penyimpanan data}
+# temp_arr, ds : array of data {temporary array untuk menerima nilai dari fungsi}
+
+
+# Function {Desain dan spesifikasi masing-masing fungsi dijelaskan di modul masing-masing}
+# function load() --> array of tabel
+# function registrasi (user: tabel) --> tabel
+# function LogIn (user: tabel) --> (string, string)
+# function tambahgame (game: tabel) --> tabel
+# function ubahgame (game: tabel) --> tabel
+# function ubah_stok (game: tabel) --> tabel
+# function BeliGame (user: tabel, game; tabel, kepemilikan: tabel, riwayat: tabel, user_id: string) --> array of tabel
+# procedure list_game (input game: tabel, input kepemilikan: tabel, input user_id: string)
+# procedure search_my_game (input game: tabel, input kepemilikan: tabel, input user_id: tabel)
+# procedure search_game_toko (input game: tabel)
+# function topup (user: tabel) --> tabel
+# procedure list_riwayat(input riwayat: tabel, input: user_id: string)
+# procedure save (input user: tabel, input game: tabel, input kepemilikan : tabel, input riwayat: tabel) 
+# procedure exit (input sudah_save : boolean, input user: tabel, input game: tabel, input kepemilikan : tabel, input riwayat: tabel)
+# procedure errormsguser ()
+# proceduree errormsgadmin()
+
 if __name__ == "__main__":    
         ds = load()
         
@@ -104,8 +140,6 @@ if __name__ == "__main__":
             # PEMANGGILAN B03 - TICTACTOE
             elif (perintah=="tictactoe"):
                tictactoe()
-            # if (perintah=="lihat_game"):
-                # lihat_game(game, kepemilikan, username)
             
             else:
                 print()

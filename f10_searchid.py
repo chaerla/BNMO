@@ -13,6 +13,7 @@
 #  1 [GAME001,BNMO - Play Along With Crypto,Adventure,2022,100000,1].
 #  2 [GAME002;Dasar Pemrograman;Coding;2022;0;10]]
 from util import konversi_harga
+import os
 
 def print_game(data, game_cnt):
     if(game_cnt==1):
@@ -33,6 +34,10 @@ def print_game(data, game_cnt):
     print('{:^16s}'.format(konversi_harga(data[4]))+"|")
 
 def search_game_id (game, kepemilikan, username):
+    os.system('cls' if os.name=='nt' else 'clear')
+    print('{:^120s}'.format("*"*120))
+    print('{:^120s}'.format("CARI GAME PADA INVENTORY ANDA"))
+    print('{:^120s}'.format("*"*120))
     found = False
     id_game = input("Masukkan ID Game: ")
     tahun_rilis = input("Masukkan Tahun Rilis Game: ")
