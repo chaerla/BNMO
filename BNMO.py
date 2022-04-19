@@ -79,22 +79,29 @@ if __name__ == "__main__":
         while(perintah!="exit"):
             # PEMANGGILAN F02 - REGISTER
             if (perintah=="register"):
-                if (role=="admin"): user = registrasi (user)
+                if (role=="admin"): 
+                    user = registrasi (user)
                 else: errormsg_user()
             
             # PEMANGGILAN F04 - TAMBAH GAME
             elif (perintah=="tambah_game"):
-                if (role=="admin"): game = tambahgame (game)
+                if (role=="admin"): 
+                    game = tambahgame (game)
+                    sudah_save = False # Perubahan yang telah dilakukan belum di-save
                 else: errormsg_user()
             
             # PEMANGGILAN F05 - UBAH GAME
             elif (perintah == "ubah_game"):
-                if (role=="admin"): ubahgame (game)
+                if (role=="admin"):
+                    ubahgame (game)
+                    sudah_save = False # Perubahan yang telah dilakukan belum di-save
                 else: errormsg_user()
 
             # PEMANGGILAN F06 - UBAH STOK
             elif (perintah=="ubah_stok"):
-                if (role=="admin"): ubah_stok (game)
+                if (role=="admin"): 
+                    ubah_stok (game)
+                    sudah_save = False # Perubahan yang telah dilakukan belum di-save
                 else: errormsg_user()
 
             # PEMANGGILAN F07
@@ -127,7 +134,9 @@ if __name__ == "__main__":
             
             # PEMANGGILAN F12 - TOP UP
             elif (perintah == "topup"):
-                if (role=="admin"): topup (user)
+                if (role=="admin"): 
+                    topup (user)
+                    sudah_save = False # Perubahan yang telah dilakukan belum di-save
                 else: errormsg_user()
 
             # PEMANGGILAN F13 - LIST RIWAYAT
