@@ -14,7 +14,6 @@ def ubahgame (game):
     tahun_input = input("Masukkan tahun rilis: ")
     harga_input = input("Masukkan harga: ")
     found = False
-    print(game)
     for data in game:
         if (data[0] == id_input): # mengubah data game
             found = True
