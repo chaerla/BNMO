@@ -53,7 +53,7 @@ def topup(user):
     if (not(flag)):
         print("Username", username, "tidak ditemukan")
     print("*"*120)
-    return user
+
 
 # tes fungsi
 # user = [["id","username","nama","password","role","saldo"],[1, "admin", "admin", "admin", "admin", 999999], [2, "luffy", "Monkey D. Luffy", "iamsungod", "user", 999999]]

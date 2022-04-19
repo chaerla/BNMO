@@ -89,12 +89,12 @@ if __name__ == "__main__":
             
             # PEMANGGILAN F05 - UBAH GAME
             elif (perintah == "ubah_game"):
-                if (role=="admin"): game = ubahgame (game)
+                if (role=="admin"): ubahgame (game)
                 else: errormsg_user()
 
             # PEMANGGILAN F06 - UBAH STOK
             elif (perintah=="ubah_stok"):
-                if (role=="admin"): game = ubah_stok (game)
+                if (role=="admin"): ubah_stok (game)
                 else: errormsg_user()
 
             # PEMANGGILAN F07
@@ -127,7 +127,7 @@ if __name__ == "__main__":
             
             # PEMANGGILAN F12 - TOP UP
             elif (perintah == "topup"):
-                if (role=="admin"): user = topup (user)
+                if (role=="admin"): topup (user)
                 else: errormsg_user()
 
             # PEMANGGILAN F13 - LIST RIWAYAT
