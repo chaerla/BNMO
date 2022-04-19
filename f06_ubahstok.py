@@ -36,7 +36,6 @@ def ubah_stok(game):
         print("Tidak ada game dengan ID tersebut!")
         print()
     print('{:^120s}'.format("*"*120))
-    return game
 
 # test fungsi
 # game = [["id","nama","kategori","tahun_rilis","harga","stok"],["GAME001","BNMO - Play Along With Crypto","Adventure",2022,100000,1],["GAME002","Dasar Pemrograman","Coding",2022,0,10]]

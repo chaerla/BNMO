@@ -3,6 +3,35 @@ from util import my_len
 from util import find_path
 from util import loadingmsg
 
+# { I.S. : Diberikan input user, game, kepemilikan, dan riwayat yang bertipe tabel.  }
+# { F.S. : Data pada data pada tabel user, game, kepemilikan, dan riwayat di-write pada folder yang diinput user }
+
+# KAMUS
+#   type tabel : array of array {tipe data bergantung pada masing-masing tabel yang sedang diakses}
+#   { Variabel }
+#   nama_folder : string
+#   user, game, kepemilikan, riwayat : tabel
+
+# { Fungsi dan Prosedur }
+# procedure write_csv (input nama_folder : string, input arr_file : tabel, input nama_file: string)
+# { I.S. : Diberikan input nama_folder yaitu folder penyimpanan, arr_file yaitu data yang ingin di-write pada file csv, nama_file yaitu nama file csv }
+# { F.S. : Data pada arr_file di-write pada csv nama_file di folder nama_folder }
+# function find_path (nama_folder: string) --> string
+# { Input : fungsi find_path menerima input nama_folder yang bertipe string }
+# { Output : fungsi find_path mengembalikan alamat directory tempat nama_folder ditemukan. Jika tidak ditemukan, mengembalikan string kosong atau "" }
+# { Fungsi ini dispesifikasikan pada modul util }
+# function my_len (arr: array) --> integer
+# { Input : sebuah array }
+# { Output : len array } 
+# { Fungsi ini dispesifikasikan pada modul util }
+
+# REALISASI FUNGSI DAN PROSEDUR 
+# procedure write_csv (input nama_folder : string, input arr_file : tabel, input nama_file: string)
+# KAMUS LOKAL
+#   path_folder : string {Variabel yang menyatakan direktori/path folder}
+#   f : SEQFILE of 
+#       (*) arr_file
+#       (1) mark
 def write_csv (nama_folder, arr_file, nama_file):
     path_folder = find_path(nama_folder)
     # path_folder akan mengembalikan "" jika tidak nama_folder tidak ditemukan
