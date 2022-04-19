@@ -63,6 +63,7 @@ def load():
         exit()
     if(find_path(nama_folder)==""):
         print("Folder "+ nama_folder+  " tidak ditemukan.")
+        exit()
     else:
         loadingmsg("Loading")
         print()
