@@ -71,7 +71,6 @@ def search_game_id (game, kepemilikan, username):
             else:
                 for data_game in game:
                     if (data[0] == data_game[0]):
-                        print(data[0])
                         found = True
                         game_cnt+=1
                         print_game(data_game, game_cnt)
