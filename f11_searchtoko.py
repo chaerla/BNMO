@@ -26,6 +26,7 @@ def search_game_toko (game):
                 print('{:^16s}'.format("TAHUN RILIS")+"|",end="")
                 print('{:^16s}'.format("HARGA")+"|")
                 print("-"*120)
+            game_cnt+=1
             if (game_cnt>0):
                 print('{:^4s}'.format(str(game_cnt)+"."), end="")
                 print('{:^12s}'.format(data[0])+"|",end="")
@@ -33,8 +34,6 @@ def search_game_toko (game):
                 print('{:^20s}'.format(data[2])+"|",end="")
                 print('{:^16s}'.format(str(data[3]))+"|",end="")
                 print('{:^16s}'.format(konversi_harga(data[4]))+"|")
-            game_cnt+=1
-        data_cnt+=1
     if (game_cnt==0):
         print("Tidak ada game di toko yang memenuhi kriteria.")
     print("*"*120)
