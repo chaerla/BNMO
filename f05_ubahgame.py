@@ -17,7 +17,7 @@ def ubahgame (game):
     for data in game:
         if (data[0] == id_input): # mengubah data game
             found = True
-            if (game_input!=""): 
+            if (game_input!=""):  # jika parameter diisi, maka ubah data game sesuai input dari user
                 data[1] = game_input
             if(kategori_input !=""): 
                 data[2] = kategori_input

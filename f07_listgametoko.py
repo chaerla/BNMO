@@ -9,9 +9,8 @@ import os
 #  2 [GAME002;Dasar Pemrograman;Coding;2022;0;10]]
 
 def my_sort (arr, tanda, kol):
-    # coba buat skema sorting pakai bubble sort
-    # hint : bandinginnya pake if arr[j][kol] >arr[j+1][kol]
-    # kalau udah disort, print array game
+    # Skema sorting yang digunakan adalah bubble sort
+    # Hanya dilakukan satu kali sorting yaitu ascending (dari kecil ke besar)
     for i in range (my_len(arr)):
         for j in range (my_len(arr)-i-1):
             if (j!=0):
@@ -21,7 +20,9 @@ def my_sort (arr, tanda, kol):
                     arr[j] = temp
     print_game(arr, tanda)
 
+# Procedure untuk mencetak array game
 def print_game(arr, tanda):
+    # parameter tanda untuk membedakan apakah dicetak secara ascending atau descending
     print('{:^120s}'.format("DAFTAR GAME: "))
     print()
     print('{:^4s}'.format("NO."), end="")
@@ -31,8 +32,7 @@ def print_game(arr, tanda):
     print('{:^16s}'.format("TAHUN RILIS")+"|",end="")
     print('{:^16s}'.format("HARGA")+"|")
     print("-"*120)
-    # ini udah ada code buat print game dari kent jadi aku copas aja supaya sergama
-    if (tanda == "" or tanda == "+"):
+    if (tanda == "" or tanda == "+"): # Cetak array secara ascending (dari depan ke belakang)
         for i in range (1, my_len(arr)):
             print('{:^4s}'.format(str(i)+"."), end="")
             print('{:^12s}'.format(arr[i][0])+"|",end="")
@@ -41,7 +41,7 @@ def print_game(arr, tanda):
             print('{:^16s}'.format(str(arr[i][3]))+"|",end="")
             print('{:^16s}'.format(konversi_harga(arr[i][4]))+"|",end="")
             print()
-    elif (tanda == "-"):
+    elif (tanda == "-"): # Cetak array secara descending (dari belakang ke depan)
         j=1
         for i in range (my_len(arr)-1, 0, -1):
             print('{:^4s}'.format(str(j)+"."), end="")
@@ -66,11 +66,12 @@ def list_game_toko(game):
         arr_temp[i] = game[i]
 
     if skema == "":
-        print_game(game, "")
+        print_game(game, "") # Jika skema kosong, maka langsung print array game awal, parameter tanda dibiarkan kosong
     else:
-        temp = ""
-        for i in range (my_len(skema)-1):
-            temp+=skema[i]
+        temp = "" # temp adalah string untuk menentukan apakah skema adalah harga/tahun
+        # slicing input skema dari user, ambil karakter pertama sampai kedua dari terakhir (karena jika input valid, karakter terakhir pastilah berupa tanda.)
+        for i in range (my_len(skema)-1): 
+            temp+=skema[i] 
         tanda = skema[my_len(skema)-1]
         if (temp == "harga"):
             my_sort(arr_temp, tanda, 4)

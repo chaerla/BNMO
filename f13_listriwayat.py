@@ -27,8 +27,8 @@ def list_riwayat (riwayat, username):
     print("Daftar game: ")
     game_cnt = 0 # Variabel untuk menyimpan jumlah game
     for data in riwayat:
-        if (username == data[3]):
-            if(game_cnt==0):
+        if (username == data[3]): # Jika user id pengguna yang sedang log in sama dengan user id pada riwayat
+            if(game_cnt==0): # Cetak header tabel
                 print('{:^120s}'.format("DAFTAR GAME YANG MEMENUHI KRITERIA PENCARIAN:"))
                 print()
                 print('{:^4s}'.format("NO."), end="")
@@ -39,6 +39,7 @@ def list_riwayat (riwayat, username):
                 print("-"*120)
             found = True
             game_cnt+=1 # increment jumlah game yang ditemukan
+            # Cetak data game
             print('{:^4s}'.format(str(game_cnt)+"."), end="")
             print('{:^12s}'.format(data[0])+"|",end="")
             print('{:^46s}'.format(data[1])+"|",end="")

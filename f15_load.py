@@ -45,8 +45,8 @@ def read_csv(nama_folder, cnt_kolom, nama_file):
         res = ["" for _ in range (my_len(lines))]
         i = 0
         for line in lines:
-            items = my_split(line, cnt_kolom)
-            res[i] = items
+            items = my_split(line, cnt_kolom) # parse CSV
+            res[i] = items # masukkan baris hasil parsing ke tabel res
             i+=1
         return res
 
@@ -82,6 +82,7 @@ def load():
         """))
         print('{:^120s}'.format("*"*120))
         print()
+    # Masukkan hasil parsing csv ke dalam array
     user = read_csv(find_path(nama_folder), 6, "user.csv")
     game = read_csv(find_path(nama_folder), 6, "game.csv")
     kepemilikan = read_csv(find_path(nama_folder), 2, "kepemilikan.csv")

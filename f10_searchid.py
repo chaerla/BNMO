@@ -15,6 +15,7 @@
 from util import konversi_harga
 import os
 
+# PROSEDUR CETAK ARRAY GAME
 def print_game(data, game_cnt):
     if(game_cnt==1):
         print('{:^120s}'.format("DAFTAR GAME YANG MEMENUHI KRITERIA PENCARIAN:"))
@@ -49,7 +50,7 @@ def search_game_id (game, kepemilikan, username):
             punya_game = True
             if (tahun_rilis == "" and id_game !=""):
                 for data_game in game:
-                    if (id_game==data_game[0] and id_game == data[0]):
+                    if (id_game==data_game[0] and id_game == data[0]): # Cek id_game pada array gamme yang sama dengan id game yang dimiliki user
                         found = True
                         game_cnt+=1
                         print_game(data_game, game_cnt)
@@ -61,7 +62,7 @@ def search_game_id (game, kepemilikan, username):
                         game_cnt+=1
                         print_game(data_game, game_cnt)
                 print()
-            elif (tahun_rilis!="" and id_game!=""): #(tahun_rilis != "" and id_game != ""):
+            elif (tahun_rilis!="" and id_game!=""):
                 for data_game in game:
                     if (id_game==data_game[0] and data[0] == data_game[0] and int(tahun_rilis)==data_game[3]):
                         found = True
@@ -69,7 +70,7 @@ def search_game_id (game, kepemilikan, username):
                         print_game(data_game, game_cnt)
                 print()
             else:
-                for data_game in game:
+                for data_game in game: # Kedua parameter kosong 
                     if (data[0] == data_game[0]):
                         found = True
                         game_cnt+=1
