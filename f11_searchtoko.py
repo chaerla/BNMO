@@ -1,4 +1,4 @@
-from util import my_lower, konversi_harga
+from util import my_lower, konversi_harga, harga_to_int
 import os
 
 def search_game_toko (game):
@@ -15,7 +15,7 @@ def search_game_toko (game):
     data_cnt = 0
     print("*"*120)
     for data in game:
-        if (not(game_input=="" and id_input =="" and harga_input=="" and kategori_input =="" and tahun_input =="") and(data[0] == id_input or id_input =="") and (my_lower(data[1]) == my_lower(game_input) or game_input =="") and (my_lower(data[2]) == my_lower(kategori_input) or kategori_input == "") and (tahun_input=="" or int(tahun_input) == data[3]) and (harga_input=="" or data [4])) or (game_input=="" and id_input =="" and harga_input=="" and kategori_input =="" and tahun_input =="" and data_cnt!=0):
+        if (not(game_input=="" and id_input =="" and harga_input=="" and kategori_input =="" and tahun_input =="") and(data[0] == id_input or id_input =="") and (my_lower(data[1]) == my_lower(game_input) or game_input =="") and (my_lower(data[2]) == my_lower(kategori_input) or kategori_input == "") and (tahun_input=="" or int(tahun_input) == data[3]) and (harga_input=="" or harga_to_int(harga_input) == data [4])) or (game_input=="" and id_input =="" and harga_input=="" and kategori_input =="" and tahun_input =="" and data_cnt!=0):
             if(game_cnt==0):
                 print('{:^120s}'.format("DAFTAR GAME YANG MEMENUHI KRITERIA PENCARIAN:"))
                 print()
