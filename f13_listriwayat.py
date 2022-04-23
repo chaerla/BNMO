@@ -24,7 +24,7 @@ def list_riwayat (riwayat, username):
         # if (kepemilikan[i][1] == username):
             # game_id = kepemilikan[i][0]
     found = False
-    print("riwayat: ")
+    print("Daftar game: ")
     game_cnt = 0 # Variabel untuk menyimpan jumlah game
     for data in riwayat:
         if (username == data[3]):
