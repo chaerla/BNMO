@@ -10,6 +10,7 @@ from f10_searchid import search_game_id
 from f11_searchtoko import search_game_toko
 from f12_topup import topup
 from f13_listriwayat import list_riwayat
+from f14_help import help
 from f15_load import load
 from f16_save import save
 from f17_exit import exit
@@ -81,6 +82,7 @@ if __name__ == "__main__":
             if (perintah=="register"):
                 if (role=="admin"): 
                     user = registrasi (user)
+                    sudah_save = False
                 else: errormsg_user()
             
             # PEMANGGILAN F04 - TAMBAH GAME
@@ -143,6 +145,10 @@ if __name__ == "__main__":
             elif (perintah == "riwayat"):
                 if (role=="user"): list_riwayat (riwayat, user_id)
                 else: errormsg_admin()
+            
+            # PEMANGGILAN F14 - HELP
+            elif (perintah == "help"):
+                help()
 
             # PEMANGGILAN F16 - SAVE
             elif (perintah == "save"):

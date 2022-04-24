@@ -34,8 +34,8 @@ def list_riwayat (riwayat, username):
                 print('{:^4s}'.format("NO."), end="")
                 print('{:^12s}'.format("ID GAME")+"|",end="")
                 print('{:^46s}'.format("NAMA GAME")+"|",end="")
-                print('{:^16s}'.format("TAHUN RILIS")+"|",end="")
-                print('{:^16s}'.format("HARGA")+"|")
+                print('{:^20s}'.format("HARGA")+"|",end="")
+                print('{:^20s}'.format("TAHUN RILIS")+"|")
                 print("-"*120)
             found = True
             game_cnt+=1 # increment jumlah game yang ditemukan
@@ -43,8 +43,8 @@ def list_riwayat (riwayat, username):
             print('{:^4s}'.format(str(game_cnt)+"."), end="")
             print('{:^12s}'.format(data[0])+"|",end="")
             print('{:^46s}'.format(data[1])+"|",end="")
-            print('{:^20s}'.format(str(data[2]))+"|",end="")
-            print('{:^20s}'.format(konversi_harga(data[4]))+"|",end="")
+            print('{:^20s}'.format(konversi_harga(data[2]))+"|",end="")
+            print('{:^20s}'.format(str(data[4]))+"|",end="")
             print()
     if (not(found)):
         print("Maaf, kamu tidak ada riwayat pembelian game. Ketik perintah beli_game untuk beli.")

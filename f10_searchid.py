@@ -54,28 +54,24 @@ def search_game_id (game, kepemilikan, username):
                         found = True
                         game_cnt+=1
                         print_game(data_game, game_cnt)
-                print()
             elif (id_game == "" and tahun_rilis !=""):
                 for data_game in game:
                     if (int(tahun_rilis)==data_game[3] and data[0] == data_game[0]):
                         found = True
                         game_cnt+=1
                         print_game(data_game, game_cnt)
-                print()
             elif (tahun_rilis!="" and id_game!=""):
                 for data_game in game:
                     if (id_game==data_game[0] and data[0] == data_game[0] and int(tahun_rilis)==data_game[3]):
                         found = True
                         game_cnt+=1
                         print_game(data_game, game_cnt)
-                print()
             else:
                 for data_game in game: # Kedua parameter kosong 
                     if (data[0] == data_game[0]):
                         found = True
                         game_cnt+=1
                         print_game(data_game, game_cnt)
-                print()
     
     if (not(found) and punya_game):
         print("Maaf. Tidak ada game pada inventory yang memenuhi kriteria.")
